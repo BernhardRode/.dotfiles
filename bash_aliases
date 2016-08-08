@@ -1,5 +1,11 @@
 alias ll='ls -lisa'
-alias d='cd /developer/src'
+
+if [ -d '/developer' ]; 
+then
+  alias d='cd /developer/src'
+else
+  alias d='cd ~/Development'
+fi
 alias h='cd ~'
 alias ..='cd ..'
 alias compose='docker-compose'
