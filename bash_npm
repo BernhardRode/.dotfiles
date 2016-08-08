@@ -1,0 +1,4 @@
+cp ~/.npmrc.home ~/.npmrc  
+if [ "$(networksetup -getcurrentlocation)" == "BCN" ]; then
+  cp ~/.npmrc.bosch ~/.npmrc  
+fi

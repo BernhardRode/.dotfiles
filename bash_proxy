@@ -1,0 +1,8 @@
+echo $NT_USER
+echo $NT_PASSWORD
+# load proxy settings
+if [ "$(networksetup -getcurrentlocation)" == "BCN" ]; then
+  export http_proxy=http://$NTUSER:$NTPASSWORD@rb-proxy-de.bosch.com:8080
+  export https_proxy=$http_proxy
+  export no_proxy=localhost,127.0.0.1,.bosch.com,*.bosch.com
+fi

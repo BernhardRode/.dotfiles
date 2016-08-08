@@ -1,0 +1,7 @@
+alias ll='ls -lisa'
+alias d='cd /developer/src'
+alias h='cd ~'
+alias ..='cd ..'
+alias compose='docker-compose'
+alias reload='source ~/.bash_profile'
+alias npub='npm publish --registry http://npm.apps.bosch-iot-cloud.com'
