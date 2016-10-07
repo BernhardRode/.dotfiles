@@ -1,4 +1,4 @@
-if [ -e ".bash_credentials" ]
+if [ -e ~/.bash_credentials ]
 then
   source ~/.bash_credentials  
 fi
@@ -8,4 +8,4 @@ for file in $DOTFILES
 do
  source $file
 done
-clear
+#clear
