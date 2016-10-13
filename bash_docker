@@ -1,0 +1,1 @@
+dbash () { docker exec -i -t "$@" /bin/bash ; }

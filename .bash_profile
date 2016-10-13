@@ -9,3 +9,5 @@ do
  source $file
 done
 #clear
+
+export PATH="$HOME/.yarn/bin:$PATH"

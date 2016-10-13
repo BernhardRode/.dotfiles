@@ -1,0 +1,7 @@
+if [ -e ".yarnrc.home" ]
+then
+  cp ~/.yarnrc.home ~/.yarnrc  
+  if [ "$(networksetup -getcurrentlocation)" == "BCN" ]; then
+    cp ~/.yarnrc.bosch ~/.yarnrc  
+  fi
+fi
