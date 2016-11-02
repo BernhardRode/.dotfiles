@@ -8,6 +8,6 @@ for file in $DOTFILES
 do
  source $file
 done
-#clear
+clear
 
 export PATH="$HOME/.yarn/bin:$PATH"
