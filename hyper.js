@@ -6,6 +6,12 @@ module.exports = {
 
   plugins: [
     "hyper-snazzy"
-  ]
+  ],
+
+  termCSS: `
+    * {
+      font-feature-settings: 'liga' 0;
+    }
+  `
 
 };
