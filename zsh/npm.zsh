@@ -1,8 +1,7 @@
-location=$(networksetup -getcurrentlocation)
-if [ -e ".npmrc.home" ]
-then
-  cp ~/.npmrc.home ~/.npmrc  
-  if [[ "$location" = "BCN" ]]; then
+if [ -e ".npmrc.home" ]; then
+  if [ $BCN ]; then
     cp ~/.npmrc.bosch ~/.npmrc  
+  else
+    cp ~/.npmrc.home ~/.npmrc  
   fi
 fi

@@ -1,8 +1,7 @@
-location=$(networksetup -getcurrentlocation)
-if [ -e ".gitconfig.home" ]
-then
-  cp ~/.gitconfig.home ~/.gitconfig  
-  if [[ "$location" = "BCN" ]]; then
+if [ -e ".gitconfig.home" ]; then
+  if [ $BCN ]; then
     cp ~/.gitconfig.bosch ~/.gitconfig  
+  else
+    cp ~/.gitconfig.home ~/.gitconfig  
   fi
 fi
