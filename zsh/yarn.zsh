@@ -5,3 +5,5 @@ if [ -e ".yarnrc.home" ]; then
     cp ~/.yarnrc.home ~/.yarnrc  
   fi
 fi
+
+export PATH="$PATH:`yarn global bin`"

@@ -24,6 +24,9 @@ alias reload='source ~/.bash_profile'
 alias npub='npm publish --registry http://npm.apps.bosch-iot-cloud.com'
 
 alias gup='git pull upstream master'
+alias wip="git add . && git commit -m 'wip' && take-picture"
+alias gpf="git push --force"
+alias gr="git rebase -i origin/master"
 alias gap=gap_fn
 alias cg='curl -s google.com' 
 
@@ -40,10 +43,17 @@ alias docker-remove-unused='docker rm $(docker ps -q -f status=exited)'
 
 alias ys="yarn start"
 alias yt="yarn run test"
+alias ytdd="yarn run tdd"
 alias yl="yarn run lint"
-alias yd="yarn run tdd"
+alias yd="yarn run docs"
 alias yb="yarn run build"
+
+alias yui="yarn upgrade-interactive"
+alias ry="rm -Rf node_modules && rm -f yarn.lock && yarn"
 
 alias brew-update-all='brew update && brew install $(brew outdated)'
 
 alias git-clean="git clean -d -x -f -e node_modules && git checkout ."
+
+alias python="python3"
+alias pip="pip3"
