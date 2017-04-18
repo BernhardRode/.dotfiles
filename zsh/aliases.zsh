@@ -29,6 +29,7 @@ alias gpf="git push --force"
 alias gr="git rebase -i origin/master"
 alias gap=gap_fn
 alias cg='curl -s google.com' 
+alias git-remove-merged='git branch --merged | grep -v \* | xargs git branch -D'
 
 alias mbb-docker-update='cd /developer/src/mbb-docker && git pull'
 alias mbb-electron-update='cd /developer/src/mbb-electron && git pull' 
@@ -57,3 +58,7 @@ alias git-clean="git clean -d -x -f -e node_modules && git checkout ."
 
 alias python="python3"
 alias pip="pip3"
+
+alias cc="code ."
+
+alias carnd1="docker run -it --rm -p 8888:8888 -v `pwd`:/src udacity/carnd-term1-starter-kit"
