@@ -59,6 +59,5 @@ alias git-clean="git clean -d -x -f -e node_modules && git checkout ."
 alias python="python3"
 alias pip="pip3"
 
-alias cc="code ."
+alias co="code ."
 
-alias carnd1="docker run -it --rm -p 8888:8888 -v `pwd`:/src udacity/carnd-term1-starter-kit"
