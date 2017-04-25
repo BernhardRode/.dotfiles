@@ -21,7 +21,6 @@ alias h='cd ~'
 alias ..='cd ..'
 alias compose='docker-compose'
 alias reload='source ~/.bash_profile'
-alias npub='npm publish --registry http://npm.apps.bosch-iot-cloud.com'
 
 alias gup='git pull upstream master'
 alias gap=gap_fn
