@@ -51,3 +51,5 @@ alias brew-update-all='brew update && brew upgrade $(brew outdated)'
 alias git-clean="git clean -d -x -f -e node_modules && git checkout ."
 
 alias vc="code ."
+alias co="code ."
+
