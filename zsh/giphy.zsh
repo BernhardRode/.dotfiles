@@ -1,0 +1,1 @@
+export GIPHY_API_KEY=d3266f0f56f94ea3b4b7eb13f0c7e8f0
