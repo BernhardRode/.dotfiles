@@ -1,10 +1,10 @@
 alias ll='ls -lisa'
 
-if [ -d '~/Development' ]; 
+if [ -d '/developer/src' ]; 
 then
-  alias d='cd ~/Development'
-else
   alias d='cd /developer/src'
+else
+  alias d='cd ~/Development'
 fi
 
 
