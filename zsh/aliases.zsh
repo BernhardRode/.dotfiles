@@ -43,10 +43,10 @@ alias yl="npm run lint"
 alias yd="npm run docs"
 alias yb="npm run build"
 
-alias yui="yarn upgrade-interactive"
 alias ry="rm -Rf node_modules && rm -Rf package-lock.json && rm -f yarn.lock && npm install"
 
-alias brew-update-all='brew update && brew upgrade $(brew outdated) && npm install -g npm-check'
+alias npm-install-globals='npm install -g npm-check nodemon commitizen @angular/cli' 
+alias brew-update-all='brew update && brew upgrade $(brew outdated) && npm-install-globals'
 
 alias git-clean="git clean -d -x -f -e node_modules && git checkout ."
 

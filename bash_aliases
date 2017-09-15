@@ -25,4 +25,3 @@ alias reload='source ~/.bash_profile'
 alias gup='git pull upstream master'
 alias gap=gap_fn
 alias cg='curl -s google.com' 
-alias nvmup='nvm install 6 && npm install typescript typings tslint pure-prompt yarn gulp jspm angular-cli nodemon' 

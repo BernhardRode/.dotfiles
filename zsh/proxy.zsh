@@ -2,7 +2,7 @@ if [ $BCN ]; then
   source ~/.credentials
   #export http_proxy="http://$CREDENTIAL_USERNAME:$CREDENTIAL_PASSWORD@$CREDENTIAL_PROXY_HOST:$CREDENTIAL_PROXY_PORT"
   export http_proxy="http://$CREDENTIAL_PROXY_HOST:$CREDENTIAL_PROXY_PORT"
-  export no_proxy='localhost,127.0.0.1,.bosch.com,*.bosch.com,185.112.179.52'
+  export no_proxy='localhost,127.0.0.1,.bosch.com,*.bosch.com,139.15.5.154'
 else
   export http_proxy=""
   export no_proxy=""
