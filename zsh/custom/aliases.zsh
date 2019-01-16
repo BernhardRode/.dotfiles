@@ -19,7 +19,7 @@ alias git-remove-merged='git branch --merged | grep -v \* | xargs git branch -D'
 alias ys="npm start"
 alias ry="rm -Rf node_modules && rm -Rf package-lock.json && rm -f yarn.lock && npm install"
 
-alias npm-install-globals='npm install -g npm-check nodemon commitizen @angular/cli' 
+alias npm-install-globals='npm install -g npm-check nodemon commitizen @angular/cli prettier' 
 alias brew-update-all='brew update && brew upgrade $(brew outdated) && npm-install-globals'
 
 alias git-clean="git clean -d -x -f -e node_modules && git checkout ."
