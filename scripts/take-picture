@@ -1,2 +1,2 @@
 #!/bin/sh
-imagesnap $HOME/Pictures/Snaps/$(date +%y%m%d%H%M%S).png
+imagesnap -w 2 $HOME/Pictures/Snaps/$(date +%y%m%d%H%M%S).png
