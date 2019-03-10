@@ -11,7 +11,8 @@ alias h='cd ~'
 alias ..='cd ..'
 
 alias wip="git add . && git commit -m 'wip'"
-alias gpf="git push --force"
+alias gpush="git push"
+alias gpull="git pull --rebase"
 alias gr="git rebase -i origin/master"
 alias cg='curl -s google.com'
 alias git-remove-merged='git branch --merged | grep -v \* | xargs git branch -D'
