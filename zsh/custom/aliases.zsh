@@ -16,7 +16,8 @@ alias gpull="git pull --rebase"
 alias gr="git rebase -i origin/master"
 alias cg='curl -s google.com'
 alias git-remove-merged='git branch --merged | grep -v \* | xargs git branch -D'
-
+alias git-remove-branches='git branch | grep -v "master" | xargs git branch -D'
+alias git-remove-all-branches='find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && git branch | grep -v "master" | xargs git branch -D" \;'
 alias ys="npm start"
 alias ry="rm -Rf node_modules && rm -Rf package-lock.json && rm -f yarn.lock && npm install"
 
