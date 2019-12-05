@@ -32,3 +32,6 @@ alias tf="terraform"
 alias k="kubectl"
 alias npmauth="npm login --auth-type=oauth"
 
+alias docker-stop-all="docker stop $(docker ps -a -q)"
+alias docker-rm-all="docker rm $(docker ps -a -q)"
+
