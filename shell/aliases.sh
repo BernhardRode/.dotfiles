@@ -13,7 +13,8 @@ alias mv='mv -i'
 
 # Git
 alias gst="git status"
-alias gwip='git add --all && git commit --no-verify -m "wip"'
+alias wip='git add --all && git commit --no-verify -m "wip"'
+
 # Function for Git commits with a prefix
 git_commit_with_prefix() {
   local prefix="$1"
