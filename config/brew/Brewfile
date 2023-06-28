@@ -1,0 +1,76 @@
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/bundle'
+# tap 'aws/tap'
+
+# brew 'autopep8'
+# brew 'aws-sam-cli'
+# brew 'aws/tap/aws-sam-cli'
+# brew 'azure-cli'
+# brew 'Azure/kubelogin/kubelogin'
+# brew 'brew-cask-completion'
+# brew 'coreutils'
+# brew 'diff-so-fancy'
+# brew 'docker'
+# brew 'emojify'
+# brew 'go'
+# brew 'gopass'
+# brew 'gopls'
+# brew 'hyperkit'
+# brew 'node'
+# brew 'nvm'
+# brew 'python3'
+# brew 'watch'
+# brew 'yarn'
+# brew 'zsh-completions'
+# brew 'zsh'
+brew 'curl'
+brew 'direnv'
+brew 'gh'
+brew 'git-extras'
+brew 'git-lfs'
+brew 'git'
+brew 'helm'
+brew 'jq'
+brew 'kubectl'
+brew 'mas'
+
+# cask 'brave-browser'
+# cask 'discord'
+# cask 'firefox'
+# cask 'obs-virtualcam'
+# cask 'obs'
+# cask 'spotify'
+# cask 'whatsapp'
+cask 'hyper'
+cask 'macpass'
+cask 'microsoft-edge'
+cask 'microsoft-teams'
+cask 'visual-studio-code'
+
+cask 'font-fira-code'
+cask 'font-inconsolata'
+cask 'font-jetbrains-mono'
+# cask 'font-anonymous-pro'
+# cask 'font-fira-mono-for-powerline'
+# cask 'font-roboto-mono-for-powerline'
+# cask 'font-source-code-pro-for-powerline'
+# cask 'font-ubuntu-mono-derivative-powerline'
+
+mas 'Affinity Designer', id: 824171161
+mas 'Amphetamine', id: 937984704
+mas 'HEIC Converter', id: 1294126402
+mas 'iMovie', id: 408981434
+mas 'Microsoft Excel', id: 462058435
+mas 'Microsoft OneNote', id: 784801555
+mas 'Microsoft Outlook', id: 985367838
+mas 'Microsoft PowerPoint', id: 462062816
+mas 'Microsoft Word', id: 462054704
+mas 'Microsoft To Do', id: 1274495053
+mas 'OneDrive', id: 823766827
+mas 'Pixelmator Pro', id: 1289583905
+mas 'Pocket', id: 568494494
+mas 'Pure Paste', id: 1611378436
+
+# mas 'Microsoft Remote Desktop', id: 1295203466
+# mas 'Xcode', id: 497799835

@@ -1,0 +1,7 @@
+[global]
+load_dotenv=true
+
+[whitelist]
+prefix = [
+  "$HOME/dev"
+]
