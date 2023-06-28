@@ -17,3 +17,12 @@
 [submodule "zsh/plugins/zsh-nvm"]
 	path = zsh/plugins/zsh-nvm
 	url = https://github.com/lukechilds/zsh-nvm.git
+[submodule "shell/plugins/zsh-dogesay"]
+	path = shell/plugins/zsh-dogesay
+	url = https://github.com/txstc55/dogesay.git
+[submodule "zsh/plugins/zsh-dogesay"]
+	path = zsh/plugins/zsh-dogesay
+	url = https://github.com/txstc55/dogesay.git
+[submodule "zsh/plugins/dogesay"]
+	path = zsh/plugins/dogesay
+	url = https://github.com/txstc55/dogesay.git

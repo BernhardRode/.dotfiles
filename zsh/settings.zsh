@@ -1,0 +1,3 @@
+cdpath=(
+  $HOME/dev
+)

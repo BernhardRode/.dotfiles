@@ -12,10 +12,31 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # Git
-alias wip="git add . && git commit --no-verify -m 'wip'"
-alias gfeat="git add . && git commit -m 'feat: ${@}'"
-alias gfix="git add . && git commit -m 'fix: ${@}'"
-alias gchore="git add . && git commit -m 'chore: ${@}'"
+alias gst="git status"
+alias gwip='git add --all && git commit --no-verify -m "wip"'
+# Function for Git commits with a prefix
+git_commit_with_prefix() {
+  local prefix="$1"
+  local message="$2"
+
+  git add --all
+  git commit -m "$prefix: $message"
+}
+
+# Function for `gfeat`
+gfeat() {
+  git_commit_with_prefix "feat" "$*"
+}
+
+# Function for `gchore`
+gchore() {
+  git_commit_with_prefix "chore" "$*"
+}
+
+# Function for `gfix`
+gfix() {
+  git_commit_with_prefix "fix" "$*"
+}
 
 # Terraform
 alias tf="terraform"
@@ -26,6 +47,7 @@ alias kgp='kubectl get pods'
 alias kgs='kubectl get svc'
 alias kdp='kubectl describe pod'
 alias kdc='kubectl describe svc'
+
 ksns() {
     kubectl config set-context --current --namespace=$1
 }
