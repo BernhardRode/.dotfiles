@@ -41,8 +41,6 @@
 - shell:
     - [git submodule update --init --recursive, Update modules]
 
-    # - [brew update]
-    # - [brew upgrade]
-    # - [mas upgrade]
-# - brewfile:
-#     - brew/Brewfile
+
+- brewfile:
+    - config/brew/Brewfile

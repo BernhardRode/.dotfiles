@@ -26,3 +26,6 @@
 [submodule "zsh/plugins/dogesay"]
 	path = zsh/plugins/dogesay
 	url = https://github.com/txstc55/dogesay.git
+[submodule "dotbot-brew"]
+	path = dotbot-brew
+	url = https://github.com/d12frosted/dotbot-brew.git
