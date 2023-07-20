@@ -3,33 +3,33 @@
 set -e
 
 CONFIG="install.conf.yaml"
-DOTBOT_DIR=".dotfiles"
+DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-cat "${BASEDIR}/install.conf.general.yaml" > "${BASEDIR}/install.conf.yaml"
+cat "${BASEDIR}/install.conf.general.yaml" > "${BASEDIR}/${CONFIG}"
 
 if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform     
-    cat "${BASEDIR}/install.conf.macos.yaml" >> "${BASEDIR}/install.conf.yaml"
+    cat "${BASEDIR}/install.conf.macos.yaml" >> "${BASEDIR}/${CONFIG}"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     # Do something under Linux platform     
-    cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/install.conf.yaml"
+    cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/${CONFIG}"
 fi
 
 cd "${BASEDIR}"
-git pull
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-# "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}" --plugin-dir dotbot-brew
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}" --plugin-dir dotbot-brew
 
-# if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-#     cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/install.conf.yaml"   
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    if [ "$(whoami)" != "root" ]; then
+        echo "#######"
+        echo "Run the following command:"
+        echo "-> sudo ${BASEDIR}/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml" 
+        echo ""
+    fi
+fi
 
-#     echo "#######"
-#     echo "Run the following command:"
-#     echo "-> sudo ${BASEDIR}/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml" 
-#     echo ""
-# fi
