@@ -23,13 +23,13 @@ git pull
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}" --plugin-dir dotbot-brew
+# "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}" --plugin-dir dotbot-brew
 
-if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/install.conf.yaml"   
+# if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+#     cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/install.conf.yaml"   
 
-    echo "#######"
-    echo "Run the following command:"
-    echo "-> sudo ${BASEDIR}/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml" 
-    echo ""
-fi
+#     echo "#######"
+#     echo "Run the following command:"
+#     echo "-> sudo ${BASEDIR}/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml" 
+#     echo ""
+# fi
