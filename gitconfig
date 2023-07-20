@@ -1,5 +1,7 @@
 [user]
 	useConfigOnly = true
+	email = mail@bernhardrode.de
+	name = Bernhard Rode
 
 [github]
 	user = bernhardrode

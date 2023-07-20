@@ -3,26 +3,33 @@
 set -e
 
 CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+DOTBOT_DIR=".dotbot"
 
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-cat install.conf.general.yaml > install.conf.yaml
+cat "${BASEDIR}/install.conf.general.yaml" > "${BASEDIR}/install.conf.yaml"
 
 if [ "$(uname)" == "Darwin" ]; then
     # Do something under Mac OS X platform     
-    cat install.conf.macos.yaml >> install.conf.yaml   
+    cat "${BASEDIR}/install.conf.macos.yaml" >> "${BASEDIR}/install.conf.yaml"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    cat install.conf.linux.yaml >> install.conf.yaml   
-elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
-    # Do something under 32 bits Windows NT platform
-elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
-    # Do something under 64 bits Windows NT platform
+    # Do something under Linux platform     
+    cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/install.conf.yaml"
 fi
 
 cd "${BASEDIR}"
+git pull
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}" --plugin-dir dotbot-brew --plugin-dir dotbot-apt 
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}" --plugin-dir dotbot-brew
+
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/install.conf.yaml"   
+
+    echo "#######"
+    echo "Run the following command:"
+    echo "-> sudo ${BASEDIR}/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml" 
+    echo ""
+fi

@@ -40,10 +40,3 @@
 
 - shell:
     - [git submodule update --init --recursive, Update modules]
-
-- brewfile:
-    - config/brew/Brewfile
-
-- apt:
-    - jq
-    - zsh
