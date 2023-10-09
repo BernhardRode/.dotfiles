@@ -1,5 +1,3 @@
-source ~/.bashrc
-
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/rbo2abt/.rd/bin:$PATH"
+set --export --prepend PATH "/Users/rbo2abt/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
