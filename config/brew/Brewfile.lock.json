@@ -2,13 +2,13 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "b37bf3c6eba298630ba693248cfc6f40f63e03e4"
+        "revision": "bb2a2e6e4b29e3f18a4b8054d340169705eaa7b2"
       },
       "homebrew/cask-fonts": {
-        "revision": "5ae55b615f6005cc59329b91c02390bf08a99601"
+        "revision": "dd3ea21284b76aff6acd59600a6e5f2f6a5d4197"
       },
       "homebrew/bundle": {
-        "revision": "2b24ca760710ef2fe92c6d295dc2813cdb0b166a"
+        "revision": "73fe1415f01bc26ce4df0c4f52099ab1a0ef5b9d"
       }
     },
     "brew": {
@@ -553,7 +553,7 @@
         }
       },
       "microsoft-teams": {
-        "version": "1.6.00.26463",
+        "version": "1.6.00.27656",
         "options": {
           "full_name": "microsoft-teams"
         }
@@ -598,7 +598,7 @@
       },
       "iMovie": {
         "id": "408981434",
-        "version": "10.3.9"
+        "version": "10.3.10"
       },
       "Microsoft Excel": {
         "id": "462058435",
@@ -622,11 +622,11 @@
       },
       "Microsoft To Do": {
         "id": "1274495053",
-        "version": "2.102"
+        "version": "2.106"
       },
       "OneDrive": {
         "id": "823766827",
-        "version": "23.158.0730"
+        "version": "23.194.0917"
       },
       "Pixelmator Pro": {
         "id": "1289583905",
@@ -645,7 +645,7 @@
   "system": {
     "macos": {
       "ventura": {
-        "HOMEBREW_VERSION": "4.1.14",
+        "HOMEBREW_VERSION": "4.1.15",
         "HOMEBREW_PREFIX": "/usr/local",
         "Homebrew/homebrew-core": "api",
         "CLT": "15.0.0.0.1.1694021235",
