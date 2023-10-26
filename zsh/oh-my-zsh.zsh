@@ -8,3 +8,5 @@ ZSH_THEME="cloud"
 plugins=(git direnv zsh-weather zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
+
+source "$HOME/.cargo/env"
