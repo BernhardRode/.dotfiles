@@ -1,3 +1,4 @@
 - apt:
     - jq
     - zsh
+    - direnv
