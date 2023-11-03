@@ -27,7 +27,9 @@
       relink: true
       force: true
     ~/.gitconfig:
+      force: true
     ~/.gitignore:
+      force: true
     ~/.shell:
     ~/.zsh:
     ~/.oh-my-zsh/plugins/zsh-nvm:

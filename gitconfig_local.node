@@ -5,3 +5,6 @@
 
 [github]
 	user = bernhardrode
+
+[credential]
+	helper = "!f() { /home/node/.vscode-server/bin/d037ac076cee195194f93ce6fe2bdfe2969cc82d/node /tmp/vscode-remote-containers-4af5c7c0-3d35-4b9e-ac8d-7f1d2ec95099.js git-credential-helper $*; }; f"	
