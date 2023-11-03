@@ -1,0 +1,11 @@
+- shell:
+    - [git submodule update --init --recursive, Update modules]
+    - [echo "##################"]
+    - [echo "##################"]
+    - [echo "##################"]
+    - [echo "##################"]
+    - [ ~/.dotfiles/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml, Install Apt]
+    - [echo "##################"]
+    - [echo "##################"]
+    - [echo "##################"]
+    - [echo "##################"]

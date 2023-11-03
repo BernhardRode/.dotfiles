@@ -22,11 +22,10 @@
       force: true
       path: config
     ~/.editorconfig:
+    ~/.gitconfig:
     ~/.gitconfig_local:
       path: gitconfig_local.${USER}
       relink: true
-      force: true
-    ~/.gitconfig:
       force: true
     ~/.gitignore:
       force: true
@@ -46,3 +45,4 @@
 
 - shell:
     - [git submodule update --init --recursive, Update modules]
+
