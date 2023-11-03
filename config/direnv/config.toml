@@ -3,6 +3,6 @@ load_dotenv=true
 
 [whitelist]
 prefix = [
-  "~/dev"
+  "~/dev",
   "/workspaces"
 ]
