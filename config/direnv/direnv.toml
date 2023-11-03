@@ -1,8 +1,8 @@
 [global]
-load_dotenv = "true"
+  load_dotenv = true
 
 [whitelist]
-prefix = [
-  "~/dev",
-  "/workspaces"
-]
+  prefix = [
+    "~/dev",
+    "/workspaces"
+  ]
