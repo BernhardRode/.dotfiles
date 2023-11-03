@@ -36,5 +36,5 @@ export PATH="/Users/rbo2abt/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
-
+export XDG_CONFIG_HOME="~/.config"
 # eval "$(direnv hook zsh)"
