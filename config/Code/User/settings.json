@@ -1,0 +1,5 @@
+{  
+    "dotfiles.repository": "bernhardrode/dotfiles",
+    "dotfiles.targetPath": "~/.dotfiles",    
+    "dotfiles.installCommand": "install"
+}
