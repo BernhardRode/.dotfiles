@@ -23,10 +23,6 @@
       path: config
     ~/.editorconfig:
     ~/.gitconfig:
-    ~/.envrc:
-      path: config/direnv/config.toml
-      relink: true
-      force: true
     ~/.gitconfig_local:
       path: gitconfig_local.${USER}
       relink: true
