@@ -16,7 +16,11 @@
     ~/.bash:
     ~/.bash_profile:
     ~/.bashrc:
+      force: true
+      path: bashrc
     ~/.config:
+      force: true
+      path: config
     ~/.editorconfig:
     ~/.gitconfig_local:
       path: gitconfig_local.${USER}
