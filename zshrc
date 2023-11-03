@@ -37,4 +37,4 @@ export PATH="/Users/rbo2abt/.rd/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
