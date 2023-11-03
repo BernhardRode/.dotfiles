@@ -9,4 +9,8 @@ plugins=(git direnv zsh-weather zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
-source "$HOME/.cargo/env"
+
+if [ -d "$HOME/.cargo/env" ]; then
+  source "$HOME/.cargo/env"
+fi
+
