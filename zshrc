@@ -35,3 +35,6 @@ fi
 export PATH="/Users/rbo2abt/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 export PATH="/usr/local/opt/curl/bin:$PATH"
+
+
+eval "$(direnv hook zsh)"
