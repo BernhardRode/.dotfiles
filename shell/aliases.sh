@@ -60,5 +60,5 @@ dfu() {
     )
 }
 
-# Others
-alias ncu="npm-check -u"
+# Other
+alias ncu="npx --yes npm-check -u"
