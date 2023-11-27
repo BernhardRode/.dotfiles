@@ -3,6 +3,9 @@
 	email = mail@bernhardrode.de
 	name = Bernhard Rode
 
+[core]
+        editor = code --wait
+
 [github]
 	user = bernhardrode
 
@@ -14,4 +17,4 @@
 	rebase = true
 
 [push]
-	autoSetupRemote = true
+        autoSetupRemote = true
