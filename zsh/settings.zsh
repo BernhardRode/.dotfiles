@@ -10,3 +10,7 @@ if [ -S "$FILE" ]; then
   export DOCKER_HOST=unix://$FILE
   echo "Export DOCKER_HOST=${DOCKER_HOST}"
 fi
+FILE="/snap/bin"
+if [ -S "$FILE" ]; then
+  path_append $FILE
+fi
