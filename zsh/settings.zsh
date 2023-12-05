@@ -14,3 +14,8 @@ FILE="/snap/bin"
 if [ -S "$FILE" ]; then
   path_append $FILE
 fi
+
+FILE="$HOME/bin"
+if [ -S "$FILE" ]; then
+  path_append $FILE
+fi

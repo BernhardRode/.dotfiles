@@ -62,3 +62,19 @@ dfu() {
 
 # Other
 alias ncu="npx --yes npm-check -u"
+
+# Package Manager Wrapper
+p() {
+  if [[ -f bun.lockb ]]; then
+    command bun "$@"
+  elif [[ -f pnpm-lock.yaml ]]; then
+    command pnpm "$@"
+  elif [[ -f yarn.lock ]]; then
+    command yarn "$@"
+  elif [[ -f package-lock.json ]]; then
+    command npm "$@"
+  else
+    command npm "$@"
+  fi
+}
+
