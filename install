@@ -11,10 +11,10 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cat "${BASEDIR}/install.conf.general.yaml" > "${BASEDIR}/${CONFIG}"
 
 if [ "$(uname)" == "Darwin" ]; then
-    # Do something under Mac OS X platform     
+    # Do something under Mac OS X platform
     cat "${BASEDIR}/install.conf.macos.yaml" >> "${BASEDIR}/${CONFIG}"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    # Do something under Linux platform     
+    # Do something under Linux platform
     cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/${CONFIG}"
 fi
 
@@ -23,12 +23,14 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}" --plugin-dir dotbot-brew
+git add config/brew/Brewfile.lock.json
+git commit -m "chore: Update Brewfile.lock.json"
 
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     if [ "$(whoami)" != "root" ]; then
         echo "#######"
         echo "Run the following command:"
-        echo "-> sudo ${BASEDIR}/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml" 
+        echo "-> sudo ${BASEDIR}/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml"
         echo ""
     fi
 fi
