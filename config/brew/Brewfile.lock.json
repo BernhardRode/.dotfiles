@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "cb552eba42037e0ef4f527990b72970eaab933a0"
+        "revision": "080fc1b9ede8e35881058baf148ba2b687c65224"
       },
       "homebrew/cask-fonts": {
         "revision": "3074f5af3123ed481151a1e2be58aad45b280acf"
@@ -552,7 +552,7 @@
       },
       "Microsoft To Do": {
         "id": "1274495053",
-        "version": "2.110"
+        "version": "2.112"
       },
       "OneDrive": {
         "id": "823766827",
@@ -560,7 +560,7 @@
       },
       "Pixelmator Pro": {
         "id": "1289583905",
-        "version": "3.5.1"
+        "version": "3.5.3"
       },
       "Pocket": {
         "id": "568494494",
