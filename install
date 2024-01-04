@@ -23,8 +23,10 @@ git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}" --plugin-dir dotbot-brew
-git add config/brew/Brewfile.lock.json
-git commit -m "chore: Update Brewfile.lock.json"
+if git diff --quiet --exit-code config/brew/Brewfile.lock.json; then
+    git add config/brew/Brewfile.lock.json
+    git commit -m "chore: Update Brewfile.lock.json"
+fi
 
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     if [ "$(whoami)" != "root" ]; then
