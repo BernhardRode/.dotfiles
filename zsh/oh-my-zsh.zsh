@@ -5,7 +5,7 @@ ZSH_THEME="cloud"
 
 # zsh-nvm and zsh-autosuggestions must be installed separately
 # plugins=(git direnv zsh-nvm dogesay)
-plugins=(git direnv zsh-weather zsh-nvm)
+plugins=(git direnv zsh-nvm)
 
 source $ZSH/oh-my-zsh.sh
 
