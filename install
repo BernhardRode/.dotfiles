@@ -19,6 +19,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
         cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/${CONFIG}"
     else
         # cat "${BASEDIR}/install.conf.codespace.yaml" >> "${BASEDIR}/${CONFIG}"
+        echo "HELLO CODESPACE"
     fi
 fi
 
