@@ -4,7 +4,6 @@ cdpath=(
 
 export AWS_PROFILE=beg-edx-shared-dev
 echo "Setting AWS_PROFILE=${AWS_PROFILE}"
-<<<<<<< Updated upstream
 
 FILE="${HOME}/.rd/docker.sock"
 if [ -S "$FILE" ]; then
@@ -20,5 +19,3 @@ FILE="$HOME/bin"
 if [ -S "$FILE" ]; then
   path_append $FILE
 fi
-=======
->>>>>>> Stashed changes
