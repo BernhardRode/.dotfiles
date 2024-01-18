@@ -30,10 +30,12 @@ fi
 
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     if [ "$(whoami)" != "root" ]; then
-        echo "#######"
-        echo "Run the following command:"
-        echo "-> sudo ${BASEDIR}/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml"
-        echo ""
+        if [ -z "${GITHUB_CODESPACE_TOKEN}" ]; then
+            echo "Run the following command:"
+            echo "#######"
+            echo "-> sudo ${BASEDIR}/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml"
+            echo ""
+        fi
     fi
 fi
 
