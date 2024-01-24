@@ -1,0 +1,100 @@
+{
+ "ConfigPath": {
+  "Path": "/Users/rbo2abt/.config/containers/podman/machine/qemu/podman-machine-default.json"
+ },
+ "CmdLine": [
+  "/usr/local/bin/qemu-system-x86_64",
+  "-machine",
+  "q35,accel=hvf:tcg",
+  "-cpu",
+  "host",
+  "-m",
+  "3814",
+  "-smp",
+  "2",
+  "-fw_cfg",
+  "name=opt/com.coreos/config,file=/Users/rbo2abt/.config/containers/podman/machine/qemu/podman-machine-default.ign",
+  "-qmp",
+  "unix:/var/folders/lg/60q5cq755fn3g5y9gxy1vr_h0000gn/T/podman/qmp_podman-machine-default.sock,server=on,wait=off",
+  "-netdev",
+  "socket,id=vlan,fd=3",
+  "-device",
+  "virtio-net-pci,netdev=vlan,mac=5a:94:ef:e4:0c:ee",
+  "-device",
+  "virtio-serial",
+  "-chardev",
+  "socket,path=/var/folders/lg/60q5cq755fn3g5y9gxy1vr_h0000gn/T/podman/podman-machine-default_ready.sock,server=on,wait=off,id=apodman-machine-default_ready",
+  "-device",
+  "virtserialport,chardev=apodman-machine-default_ready,name=org.fedoraproject.port.0",
+  "-pidfile",
+  "/var/folders/lg/60q5cq755fn3g5y9gxy1vr_h0000gn/T/podman/podman-machine-default_vm.pid",
+  "-virtfs",
+  "local,path=/Users,mount_tag=vol0,security_model=none",
+  "-virtfs",
+  "local,path=/private,mount_tag=vol1,security_model=none",
+  "-virtfs",
+  "local,path=/var/folders,mount_tag=vol2,security_model=none",
+  "-drive",
+  "if=virtio,file=/Users/rbo2abt/.local/share/containers/podman/machine/qemu/podman-machine-default_fedora-coreos-39.20240112.2.0-qemu.x86_64.qcow2"
+ ],
+ "Rootful": true,
+ "UID": 501,
+ "HostUserModified": false,
+ "IgnitionFilePath": {
+  "Path": "/Users/rbo2abt/.config/containers/podman/machine/qemu/podman-machine-default.ign"
+ },
+ "ImageStream": "testing",
+ "ImagePath": {
+  "Path": "/Users/rbo2abt/.local/share/containers/podman/machine/qemu/podman-machine-default_fedora-coreos-39.20240112.2.0-qemu.x86_64.qcow2"
+ },
+ "Mounts": [
+  {
+   "ReadOnly": false,
+   "Source": "/Users",
+   "Tag": "vol0",
+   "Target": "/Users",
+   "Type": "9p"
+  },
+  {
+   "ReadOnly": false,
+   "Source": "/private",
+   "Tag": "vol1",
+   "Target": "/private",
+   "Type": "9p"
+  },
+  {
+   "ReadOnly": false,
+   "Source": "/var/folders",
+   "Tag": "vol2",
+   "Target": "/var/folders",
+   "Type": "9p"
+  }
+ ],
+ "Name": "podman-machine-default",
+ "PidFilePath": {
+  "Path": "/var/folders/lg/60q5cq755fn3g5y9gxy1vr_h0000gn/T/podman/podman-machine-default_proxy.pid"
+ },
+ "VMPidFilePath": {
+  "Path": "/var/folders/lg/60q5cq755fn3g5y9gxy1vr_h0000gn/T/podman/podman-machine-default_vm.pid"
+ },
+ "QMPMonitor": {
+  "Address": {
+   "Path": "/var/folders/lg/60q5cq755fn3g5y9gxy1vr_h0000gn/T/podman/qmp_podman-machine-default.sock"
+  },
+  "Network": "unix",
+  "Timeout": 2000000000
+ },
+ "ReadySocket": {
+  "Path": "/var/folders/lg/60q5cq755fn3g5y9gxy1vr_h0000gn/T/podman/podman-machine-default_ready.sock"
+ },
+ "CPUs": 2,
+ "DiskSize": 93,
+ "Memory": 3814,
+ "USBs": [],
+ "IdentityPath": "/Users/rbo2abt/.ssh/podman-machine-default",
+ "Port": 56334,
+ "RemoteUsername": "core",
+ "Starting": false,
+ "Created": "2024-01-24T11:16:58.552853+01:00",
+ "LastUp": "2024-01-24T11:45:30.624537+01:00"
+}
