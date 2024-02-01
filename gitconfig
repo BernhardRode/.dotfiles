@@ -21,3 +21,4 @@
 	editor = code --wait
 [push]
 	autoSetupRemote = true
+	default = current

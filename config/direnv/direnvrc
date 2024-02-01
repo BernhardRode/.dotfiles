@@ -1,0 +1,2 @@
+export HELLO=h1
+HELLO=h2
