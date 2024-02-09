@@ -1,0 +1,5 @@
+[global]
+load_dotenv = true
+
+[whitelist]
+prefix = [ "/home/rbo2abt/dev", "/home/ebbo/dev", "~/dev" ]
