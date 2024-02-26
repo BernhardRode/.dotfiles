@@ -9,7 +9,7 @@
   "-cpu",
   "host",
   "-m",
-  "3814",
+  "7629",
   "-smp",
   "2",
   "-fw_cfg",
@@ -89,12 +89,12 @@
  },
  "CPUs": 2,
  "DiskSize": 93,
- "Memory": 3814,
+ "Memory": 7629,
  "USBs": [],
  "IdentityPath": "/Users/rbo2abt/.ssh/podman-machine-default",
  "Port": 56334,
  "RemoteUsername": "core",
  "Starting": false,
  "Created": "2024-01-24T11:16:58.552853+01:00",
- "LastUp": "2024-01-24T11:45:30.624537+01:00"
+ "LastUp": "2024-01-25T00:07:26.254322+01:00"
 }
