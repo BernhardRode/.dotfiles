@@ -2,4 +2,4 @@
 #
 
 - shell:
-    - ~/.dotfiles/scripts/banner-ebbo-dev
+    - cat config/user/banner-ebbo-dev
