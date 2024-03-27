@@ -1,4 +1,6 @@
 - apt:
-    - jq
-    - zsh
-    - direnv
+      - jq
+      - zsh
+      - direnv
+      - tmux
+      - git

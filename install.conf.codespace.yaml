@@ -1,2 +1,2 @@
-- shell:
-    - [sudo ~/.dotfiles/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml]
+# Codespace specific configuration
+#

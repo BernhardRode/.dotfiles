@@ -1,0 +1,3 @@
+[shell]
+program = "wsl.exe"
+args = ["~", "-d Ubuntu"]

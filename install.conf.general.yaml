@@ -1,3 +1,5 @@
+# General configuration
+#
 - defaults:
     link:
       create: true
@@ -6,43 +8,21 @@
 - create:
     - ~/dev
 
-- clean: ["~/.gitconfig_local"]
-
-- shell:
-    - [rm -rf ~/.oh-my-zsh, Delete existing oh-my-zsh install if present]
-    - [sh install-oh-my-zsh.sh, Downloading oh-my-zsh]
-
 - link:
-    ~/.bash:
-    ~/.bash_profile:
+    ~/.config:
+      path: config
     ~/.bashrc:
       force: true
-      path: bashrc
-    ~/.config:
-      force: true
-      path: config
-    ~/.editorconfig:
+      path: config/bash/bashrc
     ~/.gitconfig:
-    ~/.gitconfig_local:
-      path: gitconfig_local.${USER}
-      relink: true
       force: true
-    ~/.gitignore:
+      path: config/git/gitconfig
+    ~/.tmux.conf:
       force: true
-    ~/.shell:
-    ~/.zsh:
-    ~/.oh-my-zsh/plugins/zsh-nvm:
-      path: zsh/plugins/zsh-nvm
-      relink: true
-      force: true
-    ~/.oh-my-zsh/custom/plugins:
-      path: zsh/plugins
-      relink: true
-      force: true
+      path: config/tmux/tmux.conf
     ~/.zshrc:
       force: true
-      path: zshrc
+      path: config/zsh/zshrc
 
 - shell:
     - [git submodule update --init --recursive, Update modules]
-

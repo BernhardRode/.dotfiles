@@ -8,37 +8,34 @@ DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+touch "${BASEDIR}/${CONFIG}"
+
 cat "${BASEDIR}/install.conf.general.yaml" > "${BASEDIR}/${CONFIG}"
 
 if [ "$(uname)" == "Darwin" ]; then
-    # Do something under Mac OS X platform
     cat "${BASEDIR}/install.conf.macos.yaml" >> "${BASEDIR}/${CONFIG}"
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    if [ -z "${GITHUB_CODESPACE_TOKEN}" ]; then
-        # Do something under Linux platform
-        cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/${CONFIG}"
-    else
-        # cat "${BASEDIR}/install.conf.codespace.yaml" >> "${BASEDIR}/${CONFIG}"
-        echo "HELLO CODESPACE"
-    fi
+fi
+
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/${CONFIG}"
+fi
+
+if [ -n "${GITHUB_CODESPACE_TOKEN}" ]; then
+    cat "${BASEDIR}/install.conf.codespace.yaml" >> "${BASEDIR}/${CONFIG}"
+fi
+
+if [ "$(whoami)" == "rbo2abt" ]; then
+    echo "bosch"
+    cat "${BASEDIR}/install.conf.bosch.yaml" >> "${BASEDIR}/${CONFIG}"
+fi
+
+if [ "$(whoami)" == "ebbo" ]; then
+    echo "ebbo"
+    cat "${BASEDIR}/install.conf.private.yaml" >> "${BASEDIR}/${CONFIG}"
 fi
 
 cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}" --plugin-dir dotbot-brew
-if git diff --quiet --exit-code config/brew/Brewfile.lock.json; then
-    git add config/brew/Brewfile.lock.json
-    git commit -m "chore: Update Brewfile.lock.json"
-fi
-
-if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    if [ "$(whoami)" != "root" ]; then
-        echo "Run the following command:"
-        echo "#######"
-        echo "-> sudo ${BASEDIR}/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml"
-        echo ""
-    fi
-fi
-
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"

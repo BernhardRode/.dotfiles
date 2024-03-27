@@ -1,0 +1,45 @@
+live_config_reload = true
+working_directory = "None"
+
+[window]
+opacity = 0.9
+# startup_mode = "Fullscreen"
+decorations = "Full"
+blur = true
+dynamic_title = true
+
+[window.padding]
+x = 7
+y = 0
+
+[font]
+size = 14
+
+[font.normal]
+family = "FiraCode Nerd Font"
+
+[scrolling]
+history = 25000
+
+# animation = "Ease" | "EaseOut" | "EaseOutSine" | "EaseOutQuad" | "EaseOutCubic" | "EaseOutQuart" | "EaseOutQuint" | "EaseOutExpo" | "EaseOutCirc" | "Linear"
+[bell]
+animation = "EaseOutSine"
+duration = 125
+
+[cursor]
+unfocused_hollow = false
+thickness = 0.01
+
+[cursor.style]
+shape = "Beam"
+blinking = "On"
+
+[mouse]
+hide_when_typing = true
+bindings = [
+    { mouse = "Middle", action = "Paste" },
+    { mouse = "Right", action = "Copy" },
+]
+
+# If Windows WSL2
+import = ["C:/Users/bernh/AppData/Roaming/alacritty/shell-wsl2.toml"]

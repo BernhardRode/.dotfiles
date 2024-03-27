@@ -1,0 +1,9 @@
+- brew:
+          - jq
+          - zsh
+          - direnv
+          - tmux
+- cask:
+          - font-fira-code
+          - font-inconsolata
+          - font-jetbrains-mono

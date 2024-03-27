@@ -1,9 +1,0 @@
-[user]
-	name = Bernhard Rode
-	email = bernhard.rode@de.bosch.com
-
-[github]
-	user = bernhardrode
-
-[push]
-	autoSetupRemote = true

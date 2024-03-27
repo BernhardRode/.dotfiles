@@ -1,0 +1,6 @@
+# Bosch configuration
+#
+- link:
+    ~/.gitconfig_local:
+      force: true
+      path: config/git/gitconfig_bosch

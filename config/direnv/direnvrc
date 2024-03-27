@@ -1,2 +1,1 @@
-export HELLO=h1
-HELLO=h2
+HELLO="Hello Shared World"

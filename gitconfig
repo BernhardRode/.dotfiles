@@ -1,24 +1,3 @@
 [user]
-	useConfigOnly = true
 	email = mail@bernhardrode.de
 	name = Bernhard Rode
-
-[core]
-        editor = code --wait
-
-[github]
-	user = bernhardrode
-
-# Allow local customizations in the .gitconfig_local file
-[include]
-	path = ~/.gitconfig_local
-
-[pull]
-	rebase = true
-[init]
-	defaultBranch = main
-[core]
-	editor = code --wait
-[push]
-	autoSetupRemote = true
-	default = current

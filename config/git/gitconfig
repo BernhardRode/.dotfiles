@@ -1,0 +1,16 @@
+[pull]
+	rebase = true
+
+[init]
+	defaultBranch = main
+
+[push]
+	autoSetupRemote = true
+	default = current
+
+[github]
+	user = bernhardrode
+
+# Allow local customizations in the .gitconfig_local file
+[include]
+	path = ~/.gitconfig_local

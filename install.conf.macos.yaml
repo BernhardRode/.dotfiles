@@ -1,2 +1,7 @@
-- brewfile:
-    - config/brew/Brewfile
+# macOS specific configuration
+#
+- shell:
+    - [
+        sudo ~/.dotfiles/install -p dotbot-brew/brew.py -c config/brew/packages.conf.yaml,
+        Install BREW packages,
+      ]
