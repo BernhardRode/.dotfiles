@@ -12,7 +12,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # Git
-alias gst="git status"
+alias gs="git status"
 alias wip='git add --all && git commit -m "wip: minor bugfixes and improvements"'
 
 # Terraform
