@@ -8,9 +8,10 @@
       create: true
       relink: true
 
+- clean: ['~']
+
 - create:
     - ~/dev
-    - ~/.tmux/plugins
 
 - link:
     ~/.config:
@@ -24,13 +25,9 @@
     ~/.gitconfig:
       force: true
       path: config/git/gitconfig
-    ~/.tmux.conf:
-      force: true
-      path: config/tmux/tmux.conf
     ~/.zshrc:
       force: true
       path: config/zsh/zshrc
 
 - shell:
     - [git submodule update --init --recursive, Update modules]
-    - [git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm, Install tmux package manager]
