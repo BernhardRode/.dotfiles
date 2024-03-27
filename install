@@ -46,6 +46,7 @@ if [ -f "${BASEDIR}/${CONFIG}" ]; then
   rm "${BASEDIR}/${CONFIG}"
 fi
 
+# Cleanup
 rm -f ~/.zshrc.pre-oh-my-zsh-*
 rm -f ~/.zshrc_*
 rm -f .zcompdum*
