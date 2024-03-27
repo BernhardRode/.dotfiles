@@ -7,3 +7,9 @@
 [submodule "dotbot-snap"]
 	path = dotbot-snap
 	url = https://github.com/DrDynamic/dotbot-snap.git
+[submodule "zplug"]
+	path = zplug
+	url = https://github.com/zplug/zplug
+[submodule "config/tmux/plugins/tpm"]
+	path = config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

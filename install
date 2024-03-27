@@ -10,31 +10,32 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 touch "${BASEDIR}/${CONFIG}"
 
-cat "${BASEDIR}/install.conf.general.yaml" > "${BASEDIR}/${CONFIG}"
+cat "${BASEDIR}/install.conf.general.yaml" >"${BASEDIR}/${CONFIG}"
 
 if [ "$(uname)" == "Darwin" ]; then
-    cat "${BASEDIR}/install.conf.macos.yaml" >> "${BASEDIR}/${CONFIG}"
+  cat "${BASEDIR}/install.conf.macos.yaml" >>"${BASEDIR}/${CONFIG}"
 fi
 
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    cat "${BASEDIR}/install.conf.linux.yaml" >> "${BASEDIR}/${CONFIG}"
+  cat "${BASEDIR}/install.conf.linux.yaml" >>"${BASEDIR}/${CONFIG}"
 fi
 
 if [ -n "${GITHUB_CODESPACE_TOKEN}" ]; then
-    cat "${BASEDIR}/install.conf.codespace.yaml" >> "${BASEDIR}/${CONFIG}"
+  cat "${BASEDIR}/install.conf.codespace.yaml" >>"${BASEDIR}/${CONFIG}"
 fi
 
 if [ "$(whoami)" == "rbo2abt" ]; then
-    echo "bosch"
-    cat "${BASEDIR}/install.conf.bosch.yaml" >> "${BASEDIR}/${CONFIG}"
+  cat "${BASEDIR}/install.conf.bosch.yaml" >>"${BASEDIR}/${CONFIG}"
 fi
 
 if [ "$(whoami)" == "ebbo" ]; then
-    echo "ebbo"
-    cat "${BASEDIR}/install.conf.private.yaml" >> "${BASEDIR}/${CONFIG}"
+  cat "${BASEDIR}/install.conf.private.yaml" >>"${BASEDIR}/${CONFIG}"
 fi
 
+cat "${BASEDIR}/install.conf.banner.yaml" >>"${BASEDIR}/${CONFIG}"
+
 cd "${BASEDIR}"
+
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
@@ -42,5 +43,9 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 # check if file exists "${BASEDIR}/${CONFIG}"
 if [ -f "${BASEDIR}/${CONFIG}" ]; then
-    rm "${BASEDIR}/${CONFIG}"
+  rm "${BASEDIR}/${CONFIG}"
 fi
+
+rm -f ~/.zshrc.pre-oh-my-zsh-*
+rm -f ~/.zshrc_*
+rm -f .zcompdum*

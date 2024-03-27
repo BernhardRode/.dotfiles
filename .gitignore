@@ -1,1 +1,3 @@
-config/tmux/plugins/*
+config/google-chrome
+config/mimeapps.list
+install.conf.yaml

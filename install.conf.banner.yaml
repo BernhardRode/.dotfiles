@@ -1,0 +1,5 @@
+# Private configuration
+#
+
+- shell:
+    - ~/.dotfiles/scripts/banner-ebbo-dev
