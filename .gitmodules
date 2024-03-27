@@ -13,3 +13,9 @@
 [submodule "dotbot-apt"]
 	path = dotbot-apt
 	url = https://github.com/bryant1410/dotbot-apt
+[submodule "zplug"]
+	path = zplug
+	url = https://github.com/zplug/zplug.git
+[submodule "tmuxifier"]
+	path = tmuxifier
+	url = https://github.com/jimeh/tmuxifier.git

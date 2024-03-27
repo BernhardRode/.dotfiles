@@ -10,6 +10,7 @@
 
 - create:
     - ~/dev
+    - ~/.tmux/plugins
 
 - link:
     ~/.config:
@@ -32,3 +33,4 @@
 
 - shell:
     - [git submodule update --init --recursive, Update modules]
+    - [git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm, Install tmux package manager]
