@@ -1,6 +1,9 @@
 # General configuration
 #
 - defaults:
+    shell:
+      stdout: true
+      stderr: true
     link:
       create: true
       relink: true
@@ -9,8 +12,12 @@
     - ~/dev
 
 - link:
+
     ~/.config:
       path: config
+    ~/.editorconfig:
+      force: true
+      path: config/shell/editorconfig
     ~/.bashrc:
       force: true
       path: config/bash/bashrc
@@ -25,4 +32,15 @@
       path: config/zsh/zshrc
 
 - shell:
-    - [git submodule update --init --recursive, Update modules]
+    - [
+        git submodule update --init --recursive, 
+        Update modules
+      ]
+    - [
+        sudo ~/.dotfiles/install -p dotbot-apt/apt.py -c config/apt/packages.conf.yaml,
+        Install APT packages,
+      ]
+    - [
+        sudo ~/.dotfiles/install -p dotbot-snap/snap.py -c config/snap/packages.conf.yaml,
+        Install SNAP packages,
+      ]

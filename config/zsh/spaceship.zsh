@@ -1,6 +1,3 @@
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="miloshadzic"
-# ZSH_THEME="agnoster"
 # ZSH_THEME="spaceship"
 # source "$HOME/.config/zsh/spaceship-prompt/spaceship.zsh"
 
