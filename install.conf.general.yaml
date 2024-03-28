@@ -29,13 +29,13 @@
     ~/.zshrc:
       force: true
       path: config/zsh/zshrc
-    ~/.tmux.conf:
-      force: true
-      path: config/tmux/tmux.conf
+    # ~/.tmux.conf:
+    #   force: true
+    #   path: config/tmux/tmux.conf
 
 - shell:
     - [git submodule update --init --recursive, Update modules]
 
-- shell:
-    - [rm -Rf ~/.tmux/plugins/tpm, remove tpm]
-    - [git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm, install tpm]
+# - shell:
+#     - [rm -Rf ~/.tmux/plugins/tpm, remove tpm]
+#     - [git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm, install tpm]
