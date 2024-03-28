@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
 
@@ -11,12 +11,20 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 touch "${BASEDIR}/${CONFIG}"
 
 cat "${BASEDIR}/install.conf.general.yaml" >"${BASEDIR}/${CONFIG}"
-
 if [ "$(uname)" == "Darwin" ]; then
   cat "${BASEDIR}/install.conf.macos.yaml" >>"${BASEDIR}/${CONFIG}"
 fi
 
-if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+# Check for presence of common Linux commands
+is_linux=false
+if command -v grep >/dev/null 2>&1 && command -v cat >/dev/null 2>&1; then
+  # Check for presence of /proc filesystem (indicator of Linux kernel)
+  if [ -d /proc ]; then
+    is_linux=true
+  fi
+fi
+
+if [ "$is_linux" = true ]; then
   cat "${BASEDIR}/install.conf.linux.yaml" >>"${BASEDIR}/${CONFIG}"
 fi
 

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+is_linux=false
+
+# Check for presence of common Linux commands
+if command -v grep >/dev/null 2>&1 && command -v cat >/dev/null 2>&1; then
+  # Check for presence of /proc filesystem (indicator of Linux kernel)
+  if [ -d /proc ]; then
+    is_linux=true
+  fi
+fi
+
+if [ "$is_linux" = true ]; then
+  echo "You are running on Linux"
+else
+  echo "Not running on Linux"
+fi
