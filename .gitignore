@@ -1,4 +1,8 @@
 config/google-chrome
 config/mimeapps.list
+config/tmux/plugins
 install.conf.yaml
 config/iterm2/AppSupport
+shell
+bash
+zsh
