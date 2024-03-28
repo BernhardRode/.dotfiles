@@ -23,22 +23,22 @@ here() {
     echo "here -> $(readlink $HOME/.shell.here)"
 }
 
-function lazy_nvm {
-  unset -f nvm
-  unset -f npm
-  unset -f node
-  unset -f npx
-
-  export NVM_DIR=~/.nvm
-  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
-}
-
-# aliases
-function nvm { lazy_nvm; nvm "$@"; }
-function npm { lazy_nvm; npm "$@"; }
-function node { lazy_nvm; node "$@"; }
-function npx { lazy_nvm; npx "$@"; }
+# function lazy_nvm {
+#   unset -f nvm
+#   unset -f npm
+#   unset -f node
+#   unset -f npx
+#
+#   export NVM_DIR=~/.nvm
+#   [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+#   [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+# }
+#
+# # aliases
+# function nvm { lazy_nvm; nvm "$@"; }
+# function npm { lazy_nvm; npm "$@"; }
+# function node { lazy_nvm; node "$@"; }
+# function npx { lazy_nvm; npx "$@"; }
 
 # Function for Git commits with a prefix
 git_commit_with_prefix() {
