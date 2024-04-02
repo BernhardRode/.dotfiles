@@ -1,3 +1,5 @@
+source "$HOME/.zcomet/repos/spaceship-prompt/spaceship-prompt/spaceship.zsh"
+
 ZSH_THEME="spaceship"
 # source "$HOME/.config/zsh/spaceship-prompt/spaceship.zsh"
 
@@ -8,7 +10,7 @@ ZSH_THEME="spaceship"
 # SPACESHIP_USER_SHOW=always
 
 # Do not truncate path in repos
-# SPACESHIP_DIR_TRUNC_REPO=false
+SPACESHIP_DIR_TRUNC_REPO=false
 
 # Add custom Ember section
 # See: https://github.com/spaceship-prompt/spaceship-ember
