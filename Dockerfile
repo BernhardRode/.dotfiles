@@ -11,8 +11,6 @@ RUN echo "permit persist :wheel" >> /etc/doas.d/doas.conf
 # Switch to user
 USER root
 WORKDIR /home/user
-RUN git config --global --add safe.directory /home/user/.dotfiles
-RUN git clone https://github.com/bernhardrode/.dotfiles /home/user/.dotfiles
-# RUN cd /home/user && .dotfiles/install
-# RUN chown -R user:dotbot /home/user
+RUN chown -R user:dotbot /home/user
 USER user
+RUN git clone https://github.com/bernhardrode/.dotfiles /home/user/.dotfiles
