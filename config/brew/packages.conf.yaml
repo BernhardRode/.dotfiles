@@ -3,6 +3,7 @@
           - jq
           - tmux
           - zsh
+          - ripgrep
 - cask:
           - font-fira-code-nerd-font
           - font-inconsolata-nerd-font
