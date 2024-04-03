@@ -6,4 +6,3 @@ config/mimeapps.list
 config/tmux/plugins
 install.conf.yaml
 shell
-zsh
