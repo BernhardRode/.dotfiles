@@ -9,6 +9,7 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [ -x "$(command -v apk)" ]; then
   apk update
   apk add git bash python3
+  cd /root
 fi
 
 touch "${BASEDIR}/${CONFIG}"
