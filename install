@@ -7,9 +7,8 @@ DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 if [ -x "$(command -v apk)" ]; then
-  cd /root
   apk update
-  apk add git bash python3
+  apk add --no-cache git bash python3
 fi
 
 touch "${BASEDIR}/${CONFIG}"
