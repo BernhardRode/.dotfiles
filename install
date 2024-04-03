@@ -1,21 +1,16 @@
 #!/bin/bash
 
 set -e
-
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
-
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 touch "${BASEDIR}/${CONFIG}"
-
 cat "${BASEDIR}/install.conf.general.yaml" >"${BASEDIR}/${CONFIG}"
 
-## declare an array variable
 declare -a arr=("brew" "apt" "snap")
 
-## now loop through the above array
 for i in "${arr[@]}"
 do
   if [ -x "$(command -v $i)" ]; then
@@ -35,8 +30,6 @@ if [ "$(whoami)" == "ebbo" ]; then
   cat "${BASEDIR}/install.conf.private.yaml" >>"${BASEDIR}/${CONFIG}"
 fi
 
-cat "${BASEDIR}/install.conf.banner.yaml" >>"${BASEDIR}/${CONFIG}"
-
 cd "${BASEDIR}"
 
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
@@ -44,12 +37,12 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 
-# check if file exists "${BASEDIR}/${CONFIG}"
 if [ -f "${BASEDIR}/${CONFIG}" ]; then
   rm "${BASEDIR}/${CONFIG}"
 fi
 
-# Cleanup
 rm -f ~/.zshrc.pre-oh-my-zsh-*
 rm -f ~/.zshrc_*
 rm -f .zcompdum*
+
+cat "${BASEDIR}/install.conf.banner.yaml" >>"${BASEDIR}/${CONFIG}"
