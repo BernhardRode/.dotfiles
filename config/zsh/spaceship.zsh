@@ -1,7 +1,6 @@
 source "$HOME/.zcomet/repos/spaceship-prompt/spaceship-prompt/spaceship.zsh"
 
-ZSH_THEME="gruvbox"
-SOLARIZED_THEME="dark"
+# ZSH_THEME="spaceship"
 # source "$HOME/.config/zsh/spaceship-prompt/spaceship.zsh"
 
 # Display time
