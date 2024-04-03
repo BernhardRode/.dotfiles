@@ -44,5 +44,10 @@ return {
       -- require("telescope").load_extension("media_files")
     end,
   },
-  { "zbirenbaum/copilot.lua" },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function() require("copilot").setup {} end,
+  },
 }

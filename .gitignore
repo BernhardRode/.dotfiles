@@ -1,8 +1,9 @@
+bash
+config/github-copilot
 config/google-chrome
+config/iterm2/AppSupport
 config/mimeapps.list
 config/tmux/plugins
 install.conf.yaml
-config/iterm2/AppSupport
 shell
-bash
 zsh
