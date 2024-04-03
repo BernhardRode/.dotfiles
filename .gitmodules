@@ -16,3 +16,6 @@
 [submodule "tmuxifier"]
 	path = tmuxifier
 	url = https://github.com/jimeh/tmuxifier.git
+[submodule "dotbot-apk"]
+	path = dotbot-apk
+	url = https://github.com/bernhardrode/dotbot-apk
