@@ -6,6 +6,11 @@ DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+if [ -x "$(command -v apk)" ]; then
+  apk update
+  apk install git bash python3
+fi
+
 touch "${BASEDIR}/${CONFIG}"
 cat "${BASEDIR}/install.conf.general.yaml" >"${BASEDIR}/${CONFIG}"
 
@@ -14,8 +19,8 @@ declare -a arr=("brew" "apt" "snap" "apk")
 for i in "${arr[@]}"
 do
   if [ -x "$(command -v $i)" ]; then
-  cat "${BASEDIR}/install.conf.${i}.yaml" >>"${BASEDIR}/${CONFIG}"
-fi
+    cat "${BASEDIR}/install.conf.${i}.yaml" >>"${BASEDIR}/${CONFIG}"
+  fi
 done
 
 if [ -n "${GITHUB_CODESPACE_TOKEN}" ]; then
