@@ -6,6 +6,7 @@ fi
 source ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh
 
 zcomet load spaceship-prompt/spaceship-prompt
+zcomet load lukechilds/zsh-nvm
 
 # It is good to load these popular plugins last, and in this order:
 zcomet load zsh-users/zsh-syntax-highlighting
