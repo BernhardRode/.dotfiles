@@ -12,17 +12,16 @@ touch "${BASEDIR}/${CONFIG}"
 
 cat "${BASEDIR}/install.conf.general.yaml" >"${BASEDIR}/${CONFIG}"
 
-if [ -x "$(command -v brew)" ]; then
-  cat "${BASEDIR}/install.conf.brew.yaml" >>"${BASEDIR}/${CONFIG}"
-fi
+## declare an array variable
+declare -a arr=("brew" "apt" "snap")
 
-if [ -x "$(command -v apt)" ]; then
-  cat "${BASEDIR}/install.conf.apt.yaml" >>"${BASEDIR}/${CONFIG}"
+## now loop through the above array
+for i in "${arr[@]}"
+do
+  if [ -x "$(command -v $i)" ]; then
+  cat "${BASEDIR}/install.conf.${i}.yaml" >>"${BASEDIR}/${CONFIG}"
 fi
-
-if [ -x "$(command -v snap)" ]; then
-  cat "${BASEDIR}/install.conf.snap.yaml" >>"${BASEDIR}/${CONFIG}"
-fi
+done
 
 if [ -n "${GITHUB_CODESPACE_TOKEN}" ]; then
   cat "${BASEDIR}/install.conf.codespace.yaml" >>"${BASEDIR}/${CONFIG}"
