@@ -9,7 +9,7 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 touch "${BASEDIR}/${CONFIG}"
 cat "${BASEDIR}/install.conf.general.yaml" >"${BASEDIR}/${CONFIG}"
 
-declare -a arr=("brew" "apt" "snap")
+declare -a arr=("brew" "apt" "snap" "apk")
 
 for i in "${arr[@]}"
 do
