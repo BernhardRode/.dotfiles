@@ -1,8 +1,11 @@
 bash
+config/configstore
+config/gh
 config/github-copilot
 config/google-chrome
 config/iterm2/AppSupport
 config/mimeapps.list
 config/tmux/plugins
+config/tool_state
 install.conf.yaml
 shell

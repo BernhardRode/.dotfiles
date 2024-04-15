@@ -1,7 +1,10 @@
 - apt:
-      - jq
-      - zsh
-      - direnv
-      - tmux
-      - git
-      - ripgrep
+  - jq
+  - zsh
+  - direnv
+  - tmux
+  - git
+  - ripgrep
+  - make 
+  - gcc
+  - unzip

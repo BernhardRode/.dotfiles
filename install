@@ -40,6 +40,7 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
+echo "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN} -d '${BASEDIR}' -c '${CONFIG}' '${@}'"
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
 
 if [ -f "${BASEDIR}/${CONFIG}" ]; then
@@ -51,3 +52,4 @@ rm -f ~/.zshrc_*
 rm -f .zcompdum*
 
 cat "${BASEDIR}/install.conf.banner.yaml" >>"${BASEDIR}/${CONFIG}"
+rm "${BASEDIR}/${CONFIG}"
