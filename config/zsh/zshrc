@@ -44,3 +44,5 @@ fi
 if [ -f ~/.shell_private ]; then
   source ~/.shell_private
 fi
+
+if [ -e /home/rbo2abt/.nix-profile/etc/profile.d/nix.sh ]; then . /home/rbo2abt/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

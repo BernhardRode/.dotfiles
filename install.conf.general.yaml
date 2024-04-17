@@ -8,30 +8,32 @@
       create: true
       relink: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - create:
     - ~/dev
 
 - link:
-    ~/.config:
-      path: config
-    ~/.editorconfig:
-      force: true
-      path: config/shell/editorconfig
     ~/.bashrc:
       force: true
       path: config/bash/bashrc
+    ~/.config:
+      path: config
+    ~/.direnvrc:
+      force: true
+      path: config/direnv/direnvrc
+    ~/.editorconfig:
+      force: true
+      path: config/shell/editorconfig
     ~/.gitconfig:
       force: true
       path: config/git/gitconfig
-    ~/.zshrc:
-      force: true
-      path: config/zsh/zshrc
     ~/.tmux.conf:
       force: true
       path: config/tmux/tmux.conf
+    ~/.zshrc:
+      force: true
+      path: config/zsh/zshrc
 
 - shell:
     - [git submodule update --init --recursive, Update modules]
-
