@@ -56,4 +56,5 @@ rm -f ~/.zshrc_*
 rm -f .zcompdum*
 
 cat "${BASEDIR}/install.conf.banner.yaml" >>"${BASEDIR}/${CONFIG}"
-rm "${BASEDIR}/${CONFIG}"
+
+sudo rm "${BASEDIR}/${CONFIG}"
