@@ -1,6 +1,7 @@
 bash
 config/configstore
 config/gh
+config/containers
 config/github-copilot
 config/google-chrome
 config/iterm2/AppSupport
