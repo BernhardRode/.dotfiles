@@ -16,7 +16,7 @@ alias vim='nvim'
 
 # Git
 alias gs="git status"
-alias wip='git add --all && git commit -m "wip: minor bugfixes and improvements"'
+alias wip='git add --all && git commit -S -m "wip: minor bugfixes and improvements"'
 alias gp='git push'
 alias wpp='wip && gp'
 
