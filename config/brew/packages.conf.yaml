@@ -1,15 +1,27 @@
 - brew:
+    - alacritty
+    - bash
+    - bzip2
+    - coreutils
+    - curl
     - direnv
-    - jq
-    - tmux
-    - zsh
-    - ripgrep
-    - make
     - gcc
+    - git
+    - gnu-getopt
+    - gzip
+    - jq
+    - lzip
+    - make
+    - ripgrep
+    - tmux
     - unzip
+    - xz
+    - zsh
+    - zstd
 
 - cask:
     - wezterm
+    - gpg-suite
     - font-fira-code-nerd-font
     - font-inconsolata-nerd-font
     - font-ubuntu-nerd-font
