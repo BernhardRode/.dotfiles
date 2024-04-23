@@ -9,7 +9,7 @@ return {
       autochdir = true,
       direction = "float",
       insert_mappings = true,
-      open_mapping = [[<c-c>]],
+      open_mapping = [[<c-t>]],
       terminal_mappings = true,
     })
   end,

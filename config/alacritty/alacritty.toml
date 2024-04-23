@@ -36,10 +36,12 @@ blinking = "On"
 
 [mouse]
 hide_when_typing = true
-bindings = [
+bindings =  [
     { mouse = "Middle", action = "Paste" },
     { mouse = "Right", action = "Copy" },
 ]
 
 # If Windows WSL2
-# import = ["C:/Users/bernh/AppData/Roaming/alacritty/shell-wsl2.toml"]
+# import = [
+#  "C:/Users/bernh/AppData/Roaming/alacritty/shell-wsl2.toml"
+# ]
