@@ -19,3 +19,6 @@
 [submodule "dotbot-apk"]
 	path = dotbot-apk
 	url = https://github.com/bernhardrode/dotbot-apk
+[submodule "gpgit"]
+	path = gpgit
+	url = https://github.com/NicoHood/gpgit
