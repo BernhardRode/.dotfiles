@@ -16,8 +16,12 @@ OS=$(which-os)
 TITLE="SSH - ${USER}@${HOSTNAME}-${OS}"
 echo "${TITLE} - ${EMAIL}"
 
+if ! [ -d ~/.ssh ] ; then
+  mkdir -p ~/.ssh 
+fi
+
 if ! [ -f ~/.ssh/id_ed25519 ] ; then
-  ssh-keygen -t ed25519 -b 4096 -C "${EMAIL}" -N ""
+  ssh-keygen -t ed25519 -b 4096 -C "${EMAIL}" -N "" -f ~/.ssh/id_ed25519
   echo "✔ ssh key generated"
 fi
 
@@ -27,6 +31,9 @@ else
   echo "⚠️  gh not installed"
 fi
 
+if ! [ -f ~/.ssh/authorized_keys  ] ; then
+  touch ~/.ssh/authorized_keys 
+fi
 curl -s https://github.com/bernhardrode.keys >> ~/.ssh/authorized_keys 
 cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys 
 cat ~/.ssh/authorized_keys | sort | uniq > ~/.ssh/authorized_keys

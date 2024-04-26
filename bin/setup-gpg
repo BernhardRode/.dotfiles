@@ -35,6 +35,8 @@ if ! [ -d ~/.gnupg ] ; then
   echo "✔  GPG key generated"
 fi
 
+rm -Rf ${OUTFILE}
+
 GPG_KEY_ID=$(gpg --list-secret-keys --keyid-format=long | grep sec | cut -d'/' -f2 | cut -d' ' -f1)
 
 OS=$(which-os)
