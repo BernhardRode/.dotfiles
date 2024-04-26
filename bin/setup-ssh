@@ -17,7 +17,7 @@ TITLE="SSH - ${USER}@${HOSTNAME}-${OS}"
 echo "${TITLE} - ${EMAIL}"
 
 if ! [ -f ~/.ssh/id_ed25519 ] ; then
-  ssh-keygen -t ed25519  -b 4096 -C "${EMAIL}"
+  ssh-keygen -t ed25519 -b 4096 -C "${EMAIL}" -N ""
   echo "✔ ssh key generated"
 fi
 
