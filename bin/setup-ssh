@@ -25,6 +25,8 @@ if ! [ -f ~/.ssh/id_ed25519 ] ; then
   echo "✔ ssh key generated"
 fi
 
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+
 if [ -x "$(command -v gh)" ]; then
   gh ssh-key add ~/.ssh/id_ed25519.pub -t "${TITLE}"
 else
