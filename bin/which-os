@@ -1,20 +1,18 @@
 #!/bin/bash
 
-os_name=""
-
-# Check for macOS
+OS="windows"
+if [ -f /etc/lsb-release ]; then
+  source /etc/lsb-release
+  OS="linux-${DISTRIB_ID}-${DISTRIB_RELEASE}"
+  # Replace " " with "-"
+  # Replace "." with "-"
+  # Lowercase
+  #
+  OS=$(echo $OS | tr ' ' '-' | tr '.' '-' | tr '[:upper:]' '[:lower:]')
+fi
+  
 if [ "$(uname)" == "Darwin" ]; then
-  os_name="macOS"
+  OS="macos"
 fi
 
-# Check for Windows (not perfect, but works for most cases)
-if [ "$(uname -o)" == "MINGW32_NT-6" ] || [ "$(uname -o)" == "MINGW64_NT-10" ]; then
-  os_name="Windows"
-fi
-
-# Assume Linux for anything else
-if [ -z "$os_name" ]; then
-  os_name="Linux"
-fi
-
-echo "You are running on: $os_name"
+echo ${OS}

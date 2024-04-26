@@ -19,3 +19,6 @@
 [submodule "dotbot-apk"]
 	path = dotbot-apk
 	url = https://github.com/bernhardrode/dotbot-apk
+[submodule "themes/Nordic"]
+	path = themes/Nordic
+	url = https://github.com/EliverLara/Nordic.git

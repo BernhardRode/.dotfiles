@@ -1,6 +1,6 @@
 - apt:
     - bash
-    - bzip
+    - bzip2
     - coreutils
     - curl
     - direnv

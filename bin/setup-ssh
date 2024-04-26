@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ -z "${USER}" ]; then
+  USER="ebbo"
+fi
+
+if [ -z "${HOSTNAME}" ]; then
+  HOSTNAME="abyss"
+fi
+
+if [ -z "${EMAIL}" ]; then
+  EMAIL="mail@bernhardrode.de"
+fi
+
+OS=$(which-os)
+TITLE="SSH - ${USER}@${HOSTNAME}-${OS}"
+echo "${TITLE} - ${EMAIL}"
+
+if ! [ -f ~/.ssh/id_ed25519 ] ; then
+  ssh-keygen -t ed25519  -b 4096 -C "${EMAIL}"
+  echo "✔ ssh key generated"
+fi
+
+if [ -x "$(command -v gh)" ]; then
+  gh ssh-key add ~/.ssh/id_ed25519.pub -t "${TITLE}"
+else
+  echo "⚠️  gh not installed"
+fi
+
+curl -s https://github.com/bernhardrode.keys >> ~/.ssh/authorized_keys 
+cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys 
+cat ~/.ssh/authorized_keys | sort | uniq > ~/.ssh/authorized_keys
+
+echo "✔ Updated authorized_keys"

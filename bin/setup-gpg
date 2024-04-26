@@ -1,0 +1,62 @@
+#!/bin/bash
+
+if [ -z "${FULLNAME}" ]; then
+  FULLNAME="Bernhard Rode"
+fi
+
+if [ -z "${EMAIL}" ]; then
+  EMAIL="mail@bernhardrode.de"
+fi
+
+if [ -z "${GPG_KEY_TYPE}" ]; then
+  GPG_KEY_TYPE="RSA"
+fi
+
+if [ -z "${GPG_KEY_LENGTH}" ]; then
+  GPG_KEY_LENGTH="4096"
+fi
+
+OUTFILE="gpg-genkey-batch"
+
+cat >${OUTFILE} <<EOF
+Key-Type: ${GPG_KEY_TYPE}
+Key-Length: ${GPG_KEY_LENGTH}
+Name-Real: ${FULLNAME}
+Name-Email: ${EMAIL}
+Expire-Date: 0
+EOF
+
+OS=$(which-os)
+TITLE="GPG - ${USER}@${HOSTNAME}-${OS}"
+echo "${TITLE} - ${EMAIL}"
+
+if ! [ -d ~/.gnupg ] ; then
+  gpg --batch --gen-key gpg-genkey-batch
+  echo "✔  GPG key generated"
+fi
+
+GPG_KEY_ID=$(gpg --list-secret-keys --keyid-format=long | grep sec | cut -d'/' -f2 | cut -d' ' -f1)
+
+OS=$(which-os)
+TITLE="${GPG_KEY_ID}|${USER}@${HOSTNAME}-${OS}"
+gpg --armor --export $GPG_KEY_ID > ~/.gnupg/id_rsa.pub
+
+if [ -x "$(command -v gh)" ]; then
+  gh gpg-key add ~/.gnupg/id_rsa.pub -t ${TITLE}
+else
+  echo "⚠️  gh not installed"
+fi
+
+GIT_CONFIG="${HOME}/.gitconfig_local"
+cat >${GIT_CONFIG} <<EOF
+[user]
+  email = ${EMAIL}
+  name = ${FULLNAME}
+  singingkey = ${GPG_KEY_ID}
+
+[commit]
+  gpgsign = true
+EOF
+
+echo "✔  Updated ${GIT_CONFIG}"
+

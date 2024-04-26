@@ -1,3 +1,6 @@
 [user]
 	name = Bernhard Rode
-	email = mail@bernhardrode.de
+	email = mail@bernhardrode.de[]
+  signingkey = 0AB687E659360864
+[]
+  signingkey = 0AB687E659360864
