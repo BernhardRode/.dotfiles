@@ -1,4 +1,7 @@
 [user]
-	name = Bernhard Rode
-	email = mail@bernhardrode.de
-  signingkey = 0AB687E659360864
+  email = mail@bernhardrode.de
+  name = Bernhard Rode
+  singingkey = A8A3319BA394905B
+
+[commit]
+  gpgsign = true

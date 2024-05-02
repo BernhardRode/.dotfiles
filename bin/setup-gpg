@@ -44,7 +44,7 @@ TITLE="${GPG_KEY_ID}|${USER}@${HOSTNAME}-${OS}"
 gpg --armor --export $GPG_KEY_ID > ~/.gnupg/id_rsa.pub
 
 if [ -x "$(command -v gh)" ]; then
-  gh gpg-key add ~/.gnupg/id_rsa.pub -t ${TITLE}
+  gh gpg-key add ~/.gnupg/id_rsa.pub -t "${TITLE}"
 else
   echo "⚠️  gh not installed"
 fi
