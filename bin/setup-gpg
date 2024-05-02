@@ -38,7 +38,8 @@ echo "✔  GPG key title: ${TITLE}"
 
 if ! [ -d ~/.gnupg ] ; then
   echo "🐔 gpg --batch --gen-key gpg-genkey-batch"
-  gpg --batch --gen-key gpg-genkey-batch
+  gh auth refresh -s "write:gpg_key"
+  gpg --batch --gen-key ${OUTFILE}
   echo "✔  GPG key generated"
 fi
 
@@ -55,7 +56,8 @@ echo "✔  Public key exported to ~/.gnupg/id_rsa.pub"
 cat ~/.gnupg/id_rsa.pub
 
 if [ -x "$(command -v gh)" ]; then
-  # gh gpg-key add ~/.gnupg/id_rsa.pub -t "${TITLE}"
+  gh auth 
+  gh gpg-key add ~/.gnupg/id_rsa.pub -t "${TITLE}"
   echo "✔  GitHub GPG key added"
 else
   echo "⚠️  gh not installed"
