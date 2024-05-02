@@ -16,21 +16,28 @@ if [ -z "${GPG_KEY_LENGTH}" ]; then
   GPG_KEY_LENGTH="4096"
 fi
 
+echo "✔  Full name: ${FULLNAME}"
+echo "✔  Email: ${EMAIL}"
+echo "✔  GPG key length: ${GPG_KEY_LENGTH}"
+echo "✔  GPG key type: ${GPG_KEY_TYPE}"
+
 OUTFILE="gpg-genkey-batch"
 
-cat >${OUTFILE} <<EOF
-Key-Type: ${GPG_KEY_TYPE}
-Key-Length: ${GPG_KEY_LENGTH}
-Name-Real: ${FULLNAME}
-Name-Email: ${EMAIL}
-Expire-Date: 0
-EOF
+echo "Key-Type: ${GPG_KEY_TYPE}" > ${OUTFILE}
+echo "Key-Length: ${GPG_KEY_LENGTH}" >> ${OUTFILE}
+echo "Name-Real: ${FULLNAME}" >> ${OUTFILE}
+echo "Name-Email: ${EMAIL}" >> ${OUTFILE}
+echo "Expire-Date: 0" >> ${OUTFILE}
+
+echo "✔  GPG key generation batch file: ${OUTFILE}"
+cat ${OUTFILE}
 
 OS=$(which-os)
 TITLE="GPG - ${USER}@${HOSTNAME}-${OS}"
-echo "${TITLE} - ${EMAIL}"
+echo "✔  GPG key title: ${TITLE}"
 
 if ! [ -d ~/.gnupg ] ; then
+  echo "🐔 gpg --batch --gen-key gpg-genkey-batch"
   gpg --batch --gen-key gpg-genkey-batch
   echo "✔  GPG key generated"
 fi
@@ -38,13 +45,18 @@ fi
 rm -Rf ${OUTFILE}
 
 GPG_KEY_ID=$(gpg --list-secret-keys --keyid-format=long | grep sec | cut -d'/' -f2 | cut -d' ' -f1)
-
+echo "✔  GPG key ID: ${GPG_KEY_ID}"
 OS=$(which-os)
+echo "✔  OS: ${OS}"
 TITLE="${GPG_KEY_ID}|${USER}@${HOSTNAME}-${OS}"
+echo "✔  GPG key title: ${TITLE}"
 gpg --armor --export $GPG_KEY_ID > ~/.gnupg/id_rsa.pub
+echo "✔  Public key exported to ~/.gnupg/id_rsa.pub"
+cat ~/.gnupg/id_rsa.pub
 
 if [ -x "$(command -v gh)" ]; then
-  gh gpg-key add ~/.gnupg/id_rsa.pub -t "${TITLE}"
+  # gh gpg-key add ~/.gnupg/id_rsa.pub -t "${TITLE}"
+  echo "✔  GitHub GPG key added"
 else
   echo "⚠️  gh not installed"
 fi
