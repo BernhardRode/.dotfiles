@@ -1,8 +1,7 @@
 [user]
-	name = Bernhard Rode
-	email = rbo2abt@bosch.com
-	signingkey = E00503E3A7C11BC5678B5597D2CDD955AC073C16
+  email = rbo2abt@bosch.com
+  name = Bernhard Rode
+  singingkey = 87AFFF160D36777F
 
 [commit]
   gpgsign = true
-

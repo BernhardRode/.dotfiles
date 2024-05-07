@@ -34,6 +34,9 @@
     ~/.zshrc:
       force: true
       path: config/zsh/zshrc
+    ~/.ignore:
+      force: true
+      path: ignore
 
 - shell:
     - [git submodule update --init --recursive, Update modules]

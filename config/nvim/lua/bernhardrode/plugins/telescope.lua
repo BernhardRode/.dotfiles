@@ -5,7 +5,61 @@ return {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-tree/nvim-web-devicons",
-    "folke/todo-comments.nvim",
+    -- "folke/todo-comments.nvim",
+  },
+  cmd = "Telescope",
+  keys = {
+    {
+      "<leader><leader>",
+      function()
+        require("telescope.builtin").find_files({ hidden = true })
+      end,
+    },
+    { "<leader>sr", "<Cmd>Telescope resume<CR>" },
+    { "<leader>sf", "<Cmd>Telescope find_files<CR>" },
+    { "<leader>ss", "<Cmd>Telescope live_grep<CR>" },
+    { "<leader>st", "<Cmd>Telescope grep_string<CR>" },
+    { "<leader>sh", "<Cmd>Telescope help_tags<CR>" },
+    { "<leader>km", "<Cmd>Telescope keymaps<CR>" },
+    { "<leader>di", "<Cmd>Telescope diagnostics<CR>" },
+
+    {
+      "<leader>sa",
+      function()
+        local git_root = vim.fn.system("git rev-parse --show-toplevel | tr -d '\n'")
+        require("telescope.builtin").find_files({ cwd = git_root, no_ignore = true })
+      end,
+    },
+
+    {
+      "<leader>sg",
+      function()
+        require("telescope.builtin").git_files({ show_untracked = true })
+      end,
+    },
+
+    {
+      "<leader>ls",
+      function()
+        require("telescope.builtin").buffers({ sort_lastused = true })
+      end,
+    },
+
+    {
+      "<leader>sn",
+      function()
+        require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config"), no_ignore = true })
+      end,
+    },
+  },
+  extensions = {
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      -- override_file_sorter = true, -- override the file sorter
+      -- case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      -- the default case_mode is "smart_case"
+    },
   },
   config = function()
     local telescope = require("telescope")
@@ -25,71 +79,29 @@ return {
 
     telescope.setup({
       defaults = {
-        -- configure to use ripgrep
-        vimgrep_arguments = {
-          "rg",
-          "--follow", -- Follow symbolic links
-          "--hidden", -- Search for hidden files
-          "--no-heading", -- Don't group matches by each file
-          "--with-filename", -- Print the file path with the matched lines
-          "--line-number", -- Show line numbers
-          "--column", -- Show column numbers
-          "--smart-case", -- Smart case search
-
-          -- Exclude some patterns from search
-          "--glob=!**/.git/*",
-          "--glob=!**/.idea/*",
-          "--glob=!**/.vscode/*",
-          "--glob=!**/build/*",
-          "--glob=!**/dist/*",
-          "--glob=!**/yarn.lock",
-          "--glob=!**/package-lock.json",
+        layout_config = {
+          -- prompt_position = "center",
+          -- preview_width = 0.6,
         },
-
-        path_display = { "smart" },
-        mappings = {
-          i = {
-            ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-            ["<C-j>"] = actions.move_selection_next, -- move to next result
-            ["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
-            ["<C-t>"] = trouble_telescope.smart_open_with_trouble,
-          },
-        },
+        sorting_strategy = "ascending",
       },
       pickers = {
         find_files = {
-          hidden = true,
-          -- needed to exclude some files & dirs from general search
-          -- when not included or specified in .gitignore
-          find_command = {
-            "rg",
-            "--files",
-            "--hidden",
-            "--glob=!**/.git/*",
-            "--glob=!**/.idea/*",
-            "--glob=!**/.vscode/*",
-            "--glob=!**/build/*",
-            "--glob=!**/dist/*",
-            "--glob=!**/yarn.lock",
-            "--glob=!**/package-lock.json",
-          },
+          hidden = false,
+        },
+        live_grep = {
+          additional_args = function()
+            return { "--hidden", "--glob", "!**/.git/*" }
+          end,
+        },
+        grep_string = {
+          additional_args = function()
+            return { "--hidden", "--glob", "!**/.git/*" }
+          end,
         },
       },
     })
 
     telescope.load_extension("fzf")
-
-    -- set keymaps
-    local keymap = vim.keymap -- for conciseness
-
-    keymap.set("n", "<leader><leader>", "<cmd>Telescope find_files<cr>", { desc = "Default Telescope" })
-
-    keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "[f]ind [r]ecent files" })
-    keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "[f]ind [f]iles in cwd" })
-    keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "[f]ind [s]tring in cwd" })
-    keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "[f]ind [s]tring under cursor in cwd" })
-    keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "[f]ind [h]elp" })
-    keymap.set("n", "<leader>fh", "<cmd>Telescope diagnostics<cr>", { desc = "[f]ind [d]iagnostics" })
-    keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[f]ind [t]odos" })
   end,
 }
