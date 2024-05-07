@@ -2,18 +2,18 @@ live_config_reload = true
 working_directory = "None"
 
 [window]
-opacity = 0.9
+opacity = 0.7
 # startup_mode = "Fullscreen"
-decorations = "Full"
+decorations = "None"
 blur = true
-dynamic_title = true
+dynamic_title = false
 
 [window.padding]
-x = 7
+x = 0
 y = 0
 
 [font]
-size = 14
+size = 19
 
 [font.normal]
 family = "FiraCode Nerd Font"

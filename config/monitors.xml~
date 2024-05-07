@@ -3,7 +3,7 @@
     <logicalmonitor>
       <x>0</x>
       <y>0</y>
-      <scale>2</scale>
+      <scale>1.7518248558044434</scale>
       <primary>yes</primary>
       <monitor>
         <monitorspec>
@@ -15,7 +15,7 @@
         <mode>
           <width>3840</width>
           <height>2160</height>
-          <rate>119.994</rate>
+          <rate>143.982</rate>
         </mode>
       </monitor>
     </logicalmonitor>
