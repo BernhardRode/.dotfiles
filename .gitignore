@@ -10,3 +10,7 @@ config/tmux/plugins
 config/tool_state
 install.conf.yaml
 shell
+config/unity3d
+config/dconf
+config/ibus
+config/monitor.xml
