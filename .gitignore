@@ -14,3 +14,4 @@ config/unity3d
 config/dconf
 config/ibus
 config/monitor.xml
+config/monitors.xml
