@@ -5,7 +5,11 @@ fi
 
 source ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh
 
-zcomet load spaceship-prompt/spaceship-prompt
+# zcomet load spaceship-prompt/spaceship-prompt
+# zcomet load mafredri/zsh-async
+zcomet load romkatv/powerlevel10k
+zcomet load ./gruvbox-material-dark.zsh
+# zcomet load sindresorhus/pure
 # zcomet load lukechilds/zsh-nvm
 
 # It is good to load these popular plugins last, and in this order:
