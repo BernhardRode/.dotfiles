@@ -34,7 +34,6 @@ source ~/.config/shell/aliases.sh
 
 # Plugins
 source ~/.config/zsh/plugins-zcomet.zsh
-
 source ~/.config/zsh/p10k.zsh
 
 # Allow local customizations in the ~/.shell_local_after file

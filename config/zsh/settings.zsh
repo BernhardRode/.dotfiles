@@ -1,12 +1,13 @@
 # export ZSH_THEME="gruvbox"
+export ZSH_THEME="materialshell"
 # export SOLARIZED_THEME="dark"
 # export NVM_LAZY_LOAD=true
 # export NVM_AUTO_USE=true
 
 eval "$(direnv hook zsh)"
 
-# bindkey "^[[1;3C" forward-word
-# bindkey "^[[1;3D" backward-word
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 timezsh() {
   shell=${1-$SHELL}
