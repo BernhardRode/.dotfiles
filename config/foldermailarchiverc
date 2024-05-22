@@ -1,0 +1,7 @@
+[FolderArchiveAccount akonadi_imap_resource_0]
+enabled=true
+folderArchiveType=0
+instanceName=akonadi_imap_resource_0
+keepExistingStructure=false
+topLevelCollectionId=30
+useDateFromMessage=false
