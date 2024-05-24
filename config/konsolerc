@@ -6,6 +6,7 @@ ToolBarsMovable=Disabled
 
 [Notification Messages]
 CloseAllEmptyTabs=true
+CloseSingleTab=true
 
 [UiSettings]
 ColorScheme=

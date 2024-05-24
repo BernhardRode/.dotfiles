@@ -5,9 +5,10 @@ fi
 
 source ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh
 
-# zcomet load spaceship-prompt/spaceship-prompt
+
+zcomet load spaceship-prompt/spaceship-prompt
 # zcomet load mafredri/zsh-async
-zcomet load romkatv/powerlevel10k
+# zcomet load romkatv/powerlevel10k
 # zcomet load sindresorhus/pure
 # zcomet load lukechilds/zsh-nvm
 
@@ -17,3 +18,5 @@ zcomet load zsh-users/zsh-autosuggestions
 
 # Run compinit and compile its cache
 zcomet compinit
+
+

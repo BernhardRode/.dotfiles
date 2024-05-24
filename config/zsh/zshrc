@@ -34,7 +34,7 @@ source ~/.config/shell/aliases.sh
 
 # Plugins
 source ~/.config/zsh/plugins-zcomet.zsh
-source ~/.config/zsh/p10k.zsh
+source ~/.config/zsh/starship.zsh
 
 # Allow local customizations in the ~/.shell_local_after file
 if [ -f ~/.shell_local_after ]; then

@@ -1,30 +1,18 @@
 live_config_reload = true
-# working_directory = "None"
 
 [window]
 opacity = 0.7
 #startup_mode = "Fullscreen"
 #decorations = "None" # 
 blur = true
-dynamic_title = true
+dynamic_title = false
 
 [window.padding]
-x = 0
+x = 1
 y = 0
-
-[font]
-size = 16
-
-[font.normal]
-family = "FiraCode Nerd Font"
 
 [scrolling]
 history = 25000
-
-# animation = "Ease" | "EaseOut" | "EaseOutSine" | "EaseOutQuad" | "EaseOutCubic" | "EaseOutQuart" | "EaseOutQuint" | "EaseOutExpo" | "EaseOutCirc" | "Linear"
-[bell]
-animation = "EaseOutSine"
-duration = 125
 
 [cursor]
 unfocused_hollow = false

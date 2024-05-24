@@ -5,9 +5,6 @@ PreloadWeight=42
 2560x1440 screen: Height=694
 2560x1440 screen: Width=1279
 
-[PlasmaTransientsConfig]
-PreloadWeight=84
-
 [PlasmaViews][Panel 2]
 floating=1
 panelLengthMode=1

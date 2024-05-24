@@ -1,0 +1,5 @@
+- shell:
+    - [
+        sudo ~/.dotfiles/install -p dotbot-pacman/pacman.py -c config/pacman/packages.conf.yaml,
+        Install APT packages,
+      ]

@@ -1,4 +1,4 @@
-- apt:
+- pacman:
     - bash
     - bzip2
     - coreutils
@@ -9,7 +9,7 @@
     - gawk
     - gcc
     - git
-    - gnupg2
+    # - gnupg2
     - grep
     - gzip
     - jq
@@ -21,6 +21,6 @@
     - tmux
     - unzip
     - util-linux
-    - xz-utils
+    # - xz-utils
     - zsh
     - zstd

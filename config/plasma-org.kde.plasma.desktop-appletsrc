@@ -90,6 +90,10 @@ global=Alt+F1
 [Containments][2][Applets][28][Shortcuts]
 global=Alt+F1
 
+[Containments][2][Applets][31]
+immutability=1
+plugin=org.kde.plasma.lock_logout
+
 [Containments][2][Applets][4]
 immutability=1
 plugin=org.kde.plasma.icontasks
@@ -110,7 +114,7 @@ PreloadWeight=80
 SystrayContainmentId=9
 
 [Containments][2][General]
-AppletOrder=28;4;5;8;21
+AppletOrder=28;4;5;8;21;31
 
 [Containments][9]
 activityId=
@@ -213,7 +217,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][9][General]
-extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.manage-inputmethod,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.notifications,org.kde.plasma.keyboardlayout,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,steam,org.kde.plasma.diskquota
+extraItems=org.kde.plasma.cameraindicator,org.kde.plasma.manage-inputmethod,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.notifications,org.kde.plasma.keyboardlayout,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.volume,org.kde.plasma.mediacontroller,org.kde.plasma.devicenotifier,org.kde.plasma.diskquota
 hiddenItems=org.kde.kscreen,org.kde.plasma.bluetooth,steam,org.kde.plasma.brightness,org.kde.plasma.keyboardindicator,org.kde.plasma.devicenotifier,org.kde.plasma.manage-inputmethod
 knownItems=org.kde.plasma.cameraindicator,org.kde.kdeconnect,org.kde.plasma.manage-inputmethod,org.kde.plasma.printmanager,org.kde.kscreen,org.kde.plasma.brightness,org.kde.plasma.notifications,org.kde.plasma.keyboardlayout,org.kde.plasma.bluetooth,org.kde.plasma.keyboardindicator,org.kde.plasma.battery,org.kde.plasma.volume,org.kde.plasma.networkmanagement,org.kde.plasma.mediacontroller,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier
 scaleIconsToFit=true
