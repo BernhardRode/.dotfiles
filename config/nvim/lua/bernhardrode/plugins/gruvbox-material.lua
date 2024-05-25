@@ -1,5 +1,5 @@
 return {
-  "f4z3r/gruvbox-material.nvim",
+  "bernhardrode/gruvbox-material-dark.nvim",
   name = "gruvbox-material",
   lazy = false,
   opts = {
