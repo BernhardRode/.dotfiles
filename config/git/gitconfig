@@ -11,13 +11,13 @@
 [github]
 	user = bernhardrode
 
-[credential "https://github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
-
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/usr/bin/gh auth git-credential
+; [credential "https://github.com"]
+; 	helper = 
+; 	helper = !/usr/bin/gh auth git-credential
+;
+; [credential "https://gist.github.com"]
+; 	helper = 
+; 	helper = !/usr/bin/gh auth git-credential
 
 # Allow local customizations in the .gitconfig_local file
 [include]

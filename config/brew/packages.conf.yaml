@@ -5,6 +5,7 @@
     - coreutils
     - curl
     - direnv
+    - eza
     - gcc
     - git
     - gnu-getopt
@@ -13,6 +14,7 @@
     - lzip
     - make
     - ripgrep
+    - starship
     - tmux
     - unzip
     - xz
@@ -20,7 +22,6 @@
     - zstd
 
 - cask:
-    - wezterm
     - gpg-suite
     - font-fira-code-nerd-font
     - font-inconsolata-nerd-font

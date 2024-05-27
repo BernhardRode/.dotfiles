@@ -13,8 +13,8 @@ zcomet load spaceship-prompt/spaceship-prompt
 # zcomet load lukechilds/zsh-nvm
 
 # It is good to load these popular plugins last, and in this order:
-zcomet load zsh-users/zsh-syntax-highlighting
-zcomet load zsh-users/zsh-autosuggestions
+# zcomet load zsh-users/zsh-syntax-highlighting
+# zcomet load zsh-users/zsh-autosuggestions
 
 # Run compinit and compile its cache
 zcomet compinit

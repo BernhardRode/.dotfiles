@@ -2,11 +2,28 @@
 # export ZSH_THEME="materialshell"
 # export SOLARIZED_THEME="dark"
 # export NVM_LAZY_LOAD=true
-# export NVM_AUTO_USE=true
+#
+# Preferred editor for local and remote sessions
+export EDITOR='nvim'
+
+# Set default shell
+export SHELL=/bin/zsh
+export NVM_AUTO_USE=true
 
 eval "$(direnv hook zsh)"
-# bindkey "^[[1;3C" forward-word
-# bindkey "^[[1;3D" backward-word
+
+# Alt + Arrows
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+# Option + Arrows
+bindkey "^[^[[C" forward-word
+bindkey "^[^[[D" backward-word
+# More Movement fixes
+bindkey "^[[3~" delete-char                     # Key Del
+bindkey "^[[5~" beginning-of-buffer-or-history  # Key Page Up
+bindkey "^[[6~" end-of-buffer-or-history        # Key Page Down
+bindkey "^[[H" beginning-of-line                # Key Home
+bindkey "^[[F" end-of-line                      # Key End
 
 timezsh() {
   shell=${1-$SHELL}
