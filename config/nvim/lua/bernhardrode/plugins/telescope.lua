@@ -11,52 +11,44 @@ return {
   },
   cmd = "Telescope",
   keys = {
+    { "<leader><leader>", "<Cmd>Telescope resume<CR>" },
+    { "<leader>fr", "<Cmd>Telescope resume<CR>" },
+    { "<leader>ff", "<Cmd>Telescope find_files<CR>" },
+    { "<leader>fg", "<Cmd>Telescope live_grep<CR>" },
+    -- { "<leader>sb", "<Cmd>Telescope buffers<CR>" },
+    -- { "<leader>st", "<Cmd>Telescope grep_string<CR>" },
+    -- { "<leader>sh", "<Cmd>Telescope help_tags<CR>" },
+    -- { "<leader>km", "<Cmd>Telescope keymaps<CR>" },
+    -- { "<leader>di", "<Cmd>Telescope diagnostics<CR>" },
+    -- {
+    --   "<leader>sa",
+    --   function()
+    --     local git_root = vim.fn.system("git rev-parse --show-toplevel | tr -d '\n'")
+    --     require("telescope.builtin").find_files({ cwd = git_root, no_ignore = true })
+    --   end,
+    -- },
+    -- {
+    --   "<leader>sg",
+    --   function()
+    --     require("telescope.builtin").git_files({ show_untracked = true })
+    --   end,
+    -- },
     {
-      "<leader><leader>",
-      function()
-        require("telescope.builtin").find_files({ hidden = true })
-      end,
-    },
-    { "<leader>sr", "<Cmd>Telescope resume<CR>" },
-    { "<leader>sf", "<Cmd>Telescope find_files<CR>" },
-    { "<leader>ss", "<Cmd>Telescope live_grep<CR>" },
-    { "<leader>st", "<Cmd>Telescope grep_string<CR>" },
-    { "<leader>sh", "<Cmd>Telescope help_tags<CR>" },
-    { "<leader>km", "<Cmd>Telescope keymaps<CR>" },
-    { "<leader>di", "<Cmd>Telescope diagnostics<CR>" },
-
-    {
-      "<leader>sa",
-      function()
-        local git_root = vim.fn.system("git rev-parse --show-toplevel | tr -d '\n'")
-        require("telescope.builtin").find_files({ cwd = git_root, no_ignore = true })
-      end,
-    },
-
-    {
-      "<leader>sg",
-      function()
-        require("telescope.builtin").git_files({ show_untracked = true })
-      end,
-    },
-
-    {
-      "<leader>ls",
+      "<leader>fb",
       function()
         require("telescope.builtin").buffers({ sort_lastused = true })
       end,
     },
-
-    {
-      "<leader>sn",
-      function()
-        require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config"), no_ignore = true })
-      end,
-    },
+    -- {
+    --   "<leader>sn",
+    --   function()
+    --     require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config"), no_ignore = true })
+    --   end,
+    -- },
   },
   extensions = {
     fzf = {
-      fuzzy = true,                   -- false will only do exact matching
+      fuzzy = true, -- false will only do exact matching
       override_generic_sorter = true, -- override the generic sorter
       -- override_file_sorter = true, -- override the file sorter
       -- case_mode = "smart_case", -- or "ignore_case" or "respect_case"
@@ -67,7 +59,7 @@ return {
       -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
       -- filetypes = { "png", "webp", "jpg", "jpeg" },
       -- find command (defaults to `fd`)
-      find_cmd = "rg"
+      find_cmd = "rg",
     },
   },
   config = function()
