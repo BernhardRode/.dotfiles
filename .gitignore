@@ -1,3 +1,5 @@
+install.conf.yaml
+
 config/configstore
 config/gh
 config/containers
@@ -7,12 +9,18 @@ config/iterm2/AppSupport
 config/mimeapps.list
 config/tmux/plugins
 config/tool_state
-install.conf.yaml
 config/unity3d
 config/dconf
 config/ibus
 config/monitor.xml
 config/monitors.xml
 config/kdeconnect
-[Alarms]
-CalendarsLastChecked=2024,5,27,23,13,0.138
+config/Unknown*
+config/kde.org
+config/session
+config/plasma-org.kde.plasma.desktop-appletsrc
+config/gtkrc 
+config/gtkrc-2.0
+config/kalendaracrc
+config/kcmfonts 
+config/kcminputrc
