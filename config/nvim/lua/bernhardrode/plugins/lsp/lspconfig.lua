@@ -13,6 +13,10 @@ return {
     -- used for completion, annotations and signatures of Neovim apis
     { "folke/neodev.nvim", opts = {} },
     "hrsh7th/cmp-nvim-lsp",
+    -- Autoformatting
+    -- "stevearc/conform.nvim",
+    -- Schema information
+    "b0o/SchemaStore.nvim",
   },
   config = function()
     -- Brief aside: **What is LSP?**
@@ -134,6 +138,8 @@ return {
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
+      -- bashls = true,
+      -- rust_analyzer = true,
       -- clangd = {},
       -- gopls = {},
       -- pyright = {},
@@ -147,7 +153,25 @@ return {
       tsserver = {},
       --
       tflint = {},
-
+      jsonls = {
+        settings = {
+          json = {
+            schemas = require("schemastore").json.schemas(),
+            validate = { enable = true },
+          },
+        },
+      },
+      yamlls = {
+        settings = {
+          yaml = {
+            schemaStore = {
+              enable = false,
+              url = "",
+            },
+            schemas = require("schemastore").yaml.schemas(),
+          },
+        },
+      },
       lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},
