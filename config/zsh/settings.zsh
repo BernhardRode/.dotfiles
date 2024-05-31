@@ -1,11 +1,3 @@
-# export ZSH_THEME="gruvbox"
-# export ZSH_THEME="materialshell"
-# export SOLARIZED_THEME="dark"
-# export NVM_LAZY_LOAD=true
-#
-# Preferred editor for local and remote sessions
-export EDITOR='nvim'
-
 # Set default shell
 export SHELL=/bin/zsh
 export NVM_AUTO_USE=true
