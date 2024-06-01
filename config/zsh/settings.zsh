@@ -1,15 +1,49 @@
-# Set default shell
-export SHELL=/bin/zsh
-export NVM_AUTO_USE=true
+# Set the directory we want to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-eval "$(direnv hook zsh)"
+# Download Zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# Source/Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Add in Powerlevel10k
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+# Add in zsh plugins
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+# Add in snippets
+zinit snippet OMZP::git
+zinit snippet OMZP::sudo
+zinit snippet OMZP::archlinux
+zinit snippet OMZP::aws
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::kubectx
+zinit snippet OMZP::command-not-found
+
+# Load completions
+autoload -Uz compinit && compinit
+
+zinit cdreplay -q
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ${XDG_CONFIG_HOME}/zsh/p10k.zsh ]] || source ${XDG_CONFIG_HOME}/zsh/p10k.zsh
 
 # Alt + Arrows
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
+
 # Option + Arrows
 bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
+
 # More Movement fixes
 bindkey "^[[3~" delete-char                     # Key Del
 bindkey "^[[5~" beginning-of-buffer-or-history  # Key Page Up
@@ -17,34 +51,50 @@ bindkey "^[[6~" end-of-buffer-or-history        # Key Page Down
 bindkey "^[[H" beginning-of-line                # Key Home
 bindkey "^[[F" end-of-line                      # Key End
 
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do
-    /usr/bin/time $shell -i -c exit
-  done
-}
+# Keybindings
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[w' kill-region
 
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
+# Load completions
+autoload -Uz compinit && compinit
 
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+# History
+HISTSIZE=50000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    nvm use default
-  fi
-}
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
 
-if [ -s "$HOME/.nvm/nvm.sh" ]; then
-  export NVM_DIR="$HOME/.nvm"
-  nvm_cmds=(nvm node npm yarn)
-  for cmd in $nvm_cmds ; do
-    alias $cmd="unalias $nvm_cmds && unset nvm_cmds && . $NVM_DIR/nvm.sh --no-use && load-nvmrc && $cmd"
-  done
+# Shell integrations
+if command -v fzf &> /dev/null; then
+  zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+  zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+  eval "$(fzf --zsh)"
 fi
+
+if command -v zoxide &> /dev/null; then
+  eval "$(zoxide init --cmd cd zsh)"
+fi
+
+if command -v direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
+# Select Theme
+[[ ! -f ${XDG_CONFIG_HOME}/zsh/gruvbox.zsh ]] || source ${XDG_CONFIG_HOME}/zsh/gruvbox.zsh
+ZSH_THEME="gruvbox"
+SOLARIZED_THEME="dark"
+
