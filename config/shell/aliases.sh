@@ -13,8 +13,9 @@ alias la='ls -A'
 alias l='ls'
 
 # EZA
-if command -v eza &> /dev/null; then
+if command -v eza &>/dev/null; then
   alias l="eza -l --icons --git -a"
+  alias ll="ll"
   alias lt="eza --tree --level=2 --long --icons --git"
 fi
 
@@ -26,7 +27,7 @@ alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
 # Nvim
-if command -v nvim &> /dev/null; then
+if command -v nvim &>/dev/null; then
   alias v='nvim'
   alias vi='nvim'
   alias vim='nvim'
@@ -39,16 +40,15 @@ alias gp='git push'
 alias wpp='wip && gp'
 
 # Terraform
-if command -v terraform &> /dev/null; then
+if command -v terraform &>/dev/null; then
   alias tf="terraform"
 fi
 
 # Kubernetes
-if command -v kubectl &> /dev/null; then
+if command -v kubectl &>/dev/null; then
   alias k="kubectl"
   alias kcns='kubectl config set-context --current --namespace'
 fi
 
 # Other
 alias ncu="npx --yes npm-check -u"
-

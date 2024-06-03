@@ -3,6 +3,7 @@ return {
   opts = {
     ensure_installed = {
       "bash",
+      "hcl",
       "html",
       "javascript",
       "json",
@@ -12,6 +13,7 @@ return {
       "python",
       "query",
       "regex",
+      "terraform",
       "tsx",
       "typescript",
       "vim",

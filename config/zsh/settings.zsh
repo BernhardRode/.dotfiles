@@ -20,11 +20,14 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # Add in snippets
+zinit snippet OMZP::azure
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
+zinit snippet OMZP::direnv
+zinit snippet OMZP::nvm
 zinit snippet OMZP::aws
 zinit snippet OMZP::kubectl
+zinit snippet OMZP::terraform
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
@@ -87,10 +90,6 @@ fi
 
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init --cmd cd zsh)"
-fi
-
-if command -v direnv &> /dev/null; then
-  eval "$(direnv hook zsh)"
 fi
 
 # Select Theme
