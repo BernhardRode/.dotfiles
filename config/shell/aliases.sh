@@ -15,7 +15,7 @@ alias l='ls'
 # EZA
 if command -v eza &>/dev/null; then
   alias l="eza -l --icons --git -a"
-  alias ll="ll"
+  alias ll="l"
   alias lt="eza --tree --level=2 --long --icons --git"
 fi
 

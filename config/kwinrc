@@ -1,13 +1,17 @@
 [Desktops]
 Id_1=b049f479-caf3-4944-a290-d92a7df5184b
 Id_2=791b3e23-1434-4344-8e36-a5101b4c1ad0
-Name_2=Arbeitsfläche 3
-Number=2
-Rows=2
+Id_3=14227c18-6b9f-44bb-b227-3946450892d3
+Id_4=84a2c01e-579b-4ce3-b530-eb7e6bf0cfce
+Number=4
+Rows=1
 
 [Plugins]
 diminactiveEnabled=true
 translucencyEnabled=true
+
+[ScreenEdges]
+RemainActiveOnFullscreen=true
 
 [Tiling]
 padding=4
