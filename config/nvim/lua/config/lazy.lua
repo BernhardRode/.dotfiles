@@ -19,7 +19,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.dap.nlua" },
     { import = "lazyvim.plugins.extras.editor.illuminate" },
     -- { import = "lazyvim.plugins.extras.editor.trouble-v3" },
-    { import = "lazyvim.plugins.extras.lang.hcl" },
+    -- { import = "lazyvim.plugins.extras.lang.hcl" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "lazyvim.plugins.extras.lang.terraform" },
