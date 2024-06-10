@@ -29,6 +29,10 @@ config/krfbrc
 config/Signal
 config/gwenviewrc
 config/plasmashellrc
+config/kconf_updaterc
+config/kglobalshortcutsrc
+config/kmail2rc
+config/kmailsearchindexingrc
 akonadi
 evolution
 falkon
