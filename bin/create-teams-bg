@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Set configurable width for thumbnails
+THUMB_WIDTH=280
+
+# Function to generate random alphanumeric string (no hyphens)
+function generate_guid() {
+  # cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1
+  uuidgen
+}
+
+# Check for required arguments
+if [ $# -lt 2 ]; then
+  echo "Usage: $0 <input_folder> <output_folder>"
+  exit 1
+fi
+
+# Get input and output folders
+input_folder="$1"
+output_folder="$2"
+
+# Check if input folder exists
+if [ ! -d "$input_folder" ]; then
+  echo "Error: Input folder '$input_folder' does not exist."
+  exit 1
+fi
+
+# Create output folder if it doesn't exist
+mkdir -p "$output_folder"
+
+# Loop through all mp4 files in the input folder
+for file in "$input_folder"/*.mp4; do
+  # Generate random alphanumeric string
+  guid=$(generate_guid)
+
+  # Create temporary directory with GUID name inside output folder
+  tempdir="$output_folder/$guid"
+  mkdir -p "$tempdir"
+
+  ffmpeg -i "$file" -r 10 -aspect 16:9 -f image2 "$tempdir/frame_%05d.jpg"
+
+  # Select a random frame for thumbnail
+  random_frame=$(ls "$tempdir" | shuf -n 1)
+
+  # Convert frames to GIF and resize thumbnail (using magick)
+  magick convert "$tempdir/$random_frame" -resize "$THUMB_WIDTH"x "${output_folder}/${guid}_thumb.png"
+  # magick -delay 8 "$tempdir"/*.jpg "${output_folder}/$guid.gif" # Use GUID for GIF filename
+  ffmpeg -i "${file}" "${output_folder}/${guid}.gif"
+
+  mv "${output_folder}/${guid}.gif" "${output_folder}/${guid}.png"
+
+  rm -rf "$tempdir"
+done
+
+echo "Conversion complete! Check the output folder."
