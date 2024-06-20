@@ -33,6 +33,7 @@ config/kconf_updaterc
 config/kglobalshortcutsrc
 config/kmail2rc
 config/kmailsearchindexingrc
+config/sunshine
 akonadi
 evolution
 falkon
