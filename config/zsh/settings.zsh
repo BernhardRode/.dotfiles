@@ -89,10 +89,6 @@ if command -v fzf &> /dev/null; then
   eval "$(fzf --zsh)"
 fi
 
-if command -v zoxide &> /dev/null; then
-  eval "$(zoxide init --cmd cd zsh)"
-fi
-
 # Select Theme
 [[ ! -f ${XDG_CONFIG_HOME}/zsh/gruvbox.zsh ]] || source ${XDG_CONFIG_HOME}/zsh/gruvbox.zsh
 ZSH_THEME="gruvbox"

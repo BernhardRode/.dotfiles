@@ -26,6 +26,11 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ......="cd ../../../../.."
 
+# Zoxide
+# if command -v zoxiode &>/dev/null; then
+#   alias cd="z"
+# fi
+
 # Nvim
 if command -v nvim &>/dev/null; then
   alias v='nvim'
