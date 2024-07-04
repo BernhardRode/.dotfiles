@@ -6,6 +6,9 @@ if [ -f ~/.shell_local_before ]; then
   source ~/.shell_local_before
 fi
 
+# Path
+source ~/.config/shell/path.sh
+
 # Settings
 source ~/.config/shell/settings.sh
 source ~/.config/zsh/settings.zsh
@@ -15,9 +18,6 @@ source ~/.config/shell/bootstrap.sh
 
 # Colors
 source ~/.config/shell/colors.sh
-
-# Path
-source ~/.config/shell/path.sh
 
 # External settings
 source ~/.config/shell/external.sh
