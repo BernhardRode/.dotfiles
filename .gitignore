@@ -59,3 +59,5 @@ xsettingsd
 yelp
 config/kate
 config/katemetainfos
+config/argocd
+config/helm

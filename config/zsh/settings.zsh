@@ -17,7 +17,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+# zinit light Aloxaf/fzf-tab
 
 # Add in snippets
 # zinit snippet OMZP::azure
@@ -31,6 +31,7 @@ zinit snippet OMZP::nvm
 zinit snippet OMZP::terraform
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
+# zinit snippet OMZP::pyenv
 
 # Load completions
 autoload -Uz compinit && compinit
@@ -82,11 +83,14 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 
-# Shell integrations
-if command -v fzf &> /dev/null; then
-  zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-  zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-  eval "$(fzf --zsh)"
+if [[ -d ~/.fzf ]]; then
+  path_prepend ~/.fzf/bin
+  # Shell integrations
+  if command -v fzf &> /dev/null; then
+    zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+    zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+    eval "$(fzf --zsh)"
+  fi
 fi
 
 # Select Theme
