@@ -6,14 +6,14 @@ folders=("bin" "LICENSE" "config" "ignore")
 # Loop through each folder and find its latest commit, then restore it
 for folder in "${folders[@]}"
 do
-  # Get the latest commit that modified the folder
-  latest_commit=$(git log -n 1 --pretty=format:%H -- "$folder")
+  # Get the latest commit where the folder still existed
+  latest_commit=$(git rev-list -n 1 HEAD -- "$folder")
 
-  # Check if the folder exists in any commit
+  # Check if we found a commit where the folder exists
   if [ -n "$latest_commit" ]; then
     echo "Restoring $folder from commit $latest_commit..."
 
-    # Checkout the folder from its latest commit
+    # Checkout the folder from the last commit where it existed
     git checkout "$latest_commit" -- "$folder"
 
     # Stage the folder for commit
@@ -28,3 +28,4 @@ do
 done
 
 echo "All specified folders processed."
+
