@@ -1,8 +1,0 @@
-- defaults:
-    snap:
-      classic: false # default
-      channel: latest/stable # default
-
-- snap:
-    - nvim:
-        classic: true

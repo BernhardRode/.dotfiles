@@ -1,5 +1,0 @@
-# Private configuration
-#
-
-- shell:
-    - cat config/user/banner-ebbo-dev

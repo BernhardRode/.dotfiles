@@ -1,9 +1,0 @@
-[Defaults]
-Profile=Standard
-
-[PROFILE_Standard]
-EmailAddress=ebbo@rode.io
-FullName=Bernhard Rode
-Organization=
-ReplyAddr=
-ServerType=

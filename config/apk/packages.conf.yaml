@@ -1,8 +1,0 @@
-- apk:
-      - jq
-      - zsh
-      - direnv
-      - tmux
-      - git
-      - ripgrep
-      - neovim

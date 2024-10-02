@@ -1,5 +1,0 @@
-- shell:
-    - [
-        sudo bash .dotfiles/install -p dotbot-apk/apk.py -c config/apk/packages.conf.yaml,
-        Install APK packages,
-      ]

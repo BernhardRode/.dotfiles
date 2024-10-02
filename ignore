@@ -1,4 +1,0 @@
-!.env*
-!.github*
-.git
-.terraform

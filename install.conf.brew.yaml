@@ -1,7 +1,0 @@
-# macOS specific configuration
-#
-- shell:
-    - [
-        ~/.dotfiles/install -p dotbot-brew/brew.py -c config/brew/packages.conf.yaml,
-        Install BREW packages,
-      ]
