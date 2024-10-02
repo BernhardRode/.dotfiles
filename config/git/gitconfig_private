@@ -1,7 +1,0 @@
-[user]
-  email = mail@bernhardrode.de
-  name = Bernhard Rode
-  singingkey = 0F9451CF3A713E90
-
-[commit]
-  gpgsign = true

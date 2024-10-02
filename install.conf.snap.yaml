@@ -1,5 +1,0 @@
-- shell:
-    - [
-        sudo ~/.dotfiles/install -p dotbot-snap/snap.py -c config/snap/packages.conf.yaml,
-        Install SNAP packages,
-      ]
